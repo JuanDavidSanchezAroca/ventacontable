@@ -1,0 +1,1 @@
+insert into usuario(nombre_completo,password,correo,imagen) values('juan','12345','test@gmail.com','imagen')

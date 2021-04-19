@@ -1,0 +1,2 @@
+select id_usuario,nombre_completo,password,correo,imagen
+from usuario

@@ -1,0 +1,1 @@
+INSERT INTO usuario (nombre_completo, password,correo,imagen) VALUES (:nombreCompleto, :password, :correo, :imagen);
