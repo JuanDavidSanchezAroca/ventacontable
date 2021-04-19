@@ -57,7 +57,7 @@ public class ValidadorArgumento {
         }
     }
 
-    public static void validarMenor(Long numeroInicial, Long numeroFinal, String mensaje) {
+    public static void validarMenor(double numeroInicial, double numeroFinal, String mensaje) {
         if (numeroInicial > numeroFinal) {
             throw new ExcepcionValorInvalido(mensaje);
         }
