@@ -12,6 +12,13 @@ public interface RepositorioProducto {
     Long crear(Producto producto);
 
     /**
+     * Permite actualizar un producto
+     * @param producto
+     * @return el id del producto
+     */
+    void actualizar(Producto producto);
+
+    /**
      * Permite validar si un nombre de producto ya existe
      * @param nombre
      * @return true, si existe, false caso contrario

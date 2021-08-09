@@ -15,6 +15,9 @@ public class RepositorioProductoPostgres implements RepositorioProducto {
     @SqlStatement(namespace="producto", value="crear")
     private static String sqlCrear;
 
+    @SqlStatement(namespace = "producto", value = "actualizar")
+    private static String sqlActualizar;
+
     @SqlStatement(namespace="producto", value="existeNombre")
     private static String sqlExisteNombre;
 
@@ -25,6 +28,11 @@ public class RepositorioProductoPostgres implements RepositorioProducto {
     @Override
     public Long crear(Producto producto) {
         return this.customNamedParameterJdbcTemplate.crear(producto,sqlCrear,"id_producto");
+    }
+
+    @Override
+    public void actualizar(Producto producto) {
+        this.customNamedParameterJdbcTemplate.actualizar(producto,sqlActualizar);
     }
 
     @Override
