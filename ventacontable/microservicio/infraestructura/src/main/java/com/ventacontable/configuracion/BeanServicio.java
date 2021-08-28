@@ -1,5 +1,9 @@
 package com.ventacontable.configuracion;
 
+import com.ventacontable.inventario.puerto.dao.DaoInventario;
+import com.ventacontable.inventario.puerto.repositorio.RepositorioInventario;
+import com.ventacontable.inventario.servicio.ServicioActualizarInventario;
+import com.ventacontable.inventario.servicio.ServicioCrearInventario;
 import com.ventacontable.producto.puerto.dao.DaoProducto;
 import com.ventacontable.producto.puerto.repositorio.RepositorioProducto;
 import com.ventacontable.producto.servicio.ServicioActualizarProducto;
@@ -31,5 +35,15 @@ public class BeanServicio {
     @Bean
     public ServicioActualizarProducto servicioActualizarProducto(RepositorioProducto repositorioProducto, DaoProducto daoProducto){
         return new ServicioActualizarProducto(daoProducto,repositorioProducto);
+    }
+
+    @Bean
+    public ServicioCrearInventario servicioCrearInventario(RepositorioInventario repositorioInventario,DaoProducto daoProducto){
+        return  new ServicioCrearInventario(repositorioInventario,daoProducto);
+    }
+
+    @Bean
+    public ServicioActualizarInventario servicioActualizarInventario(RepositorioInventario repositorioInventario, DaoProducto daoProducto, DaoInventario daoInventario){
+        return new ServicioActualizarInventario(daoProducto,repositorioInventario,daoInventario);
     }
 }

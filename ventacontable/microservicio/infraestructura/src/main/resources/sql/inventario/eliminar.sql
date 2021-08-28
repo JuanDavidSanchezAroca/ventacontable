@@ -1,0 +1,1 @@
+DELETE FROM inventario WHERE id_inventario = :idInventario
