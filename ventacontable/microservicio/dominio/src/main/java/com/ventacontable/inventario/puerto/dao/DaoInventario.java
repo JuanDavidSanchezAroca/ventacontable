@@ -2,6 +2,8 @@ package com.ventacontable.inventario.puerto.dao;
 
 import com.ventacontable.inventario.modelo.dto.DtoInventario;
 
+import java.util.List;
+
 public interface DaoInventario {
 
     /**
@@ -17,4 +19,17 @@ public interface DaoInventario {
      * @return Inventario
      */
     DtoInventario obtener(int idInventario);
+
+    /**
+     * Metodo que recupera el listado de registro de inventarios
+     * @return lista inventarios
+     */
+    List<DtoInventario> listar();
+
+    /**
+     * Metodo que recupera el listado de registro de inventarios dado un producto
+     * @param idProducto identificadorProducto
+     * @return listado inventarios
+     */
+    List<DtoInventario> listarPorIdProducto(int idProducto);
 }

@@ -7,6 +7,8 @@ import com.ventacontable.inventario.puerto.dao.DaoInventario;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class DaoInventarioPostgres implements DaoInventario {
 
@@ -17,6 +19,12 @@ public class DaoInventarioPostgres implements DaoInventario {
 
     @SqlStatement(namespace = "inventario", value = "obtener")
     private static String sqlObtener;
+
+    @SqlStatement(namespace = "inventario", value = "listar")
+    private static String sqlListar;
+
+    @SqlStatement(namespace = "inventario", value = "listarProducto")
+    private static String sqlListarProducto;
 
     public DaoInventarioPostgres(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -34,5 +42,17 @@ public class DaoInventarioPostgres implements DaoInventario {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("idInventario", idInventario);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtener,paramSource, new MapeoInventario());
+    }
+
+    @Override
+    public List<DtoInventario> listar() {
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoInventario());
+    }
+
+    @Override
+    public List<DtoInventario> listarPorIdProducto(int idProducto) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("idProducto", idProducto);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarProducto,paramSource,new MapeoInventario());
     }
 }
