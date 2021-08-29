@@ -70,7 +70,7 @@ public class ValidadorArgumento {
     }
 
     public static void validarMenorIgual(int numeroInicial, int numeroFinal, String mensaje) {
-        if (numeroInicial >= numeroFinal) {
+        if (numeroInicial > numeroFinal) {
             throw new ExcepcionValorInvalido(mensaje);
         }
     }
