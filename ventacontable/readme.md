@@ -1,6 +1,6 @@
 Este bloque contiene la estructura necesaria para construir un proyecto en java favoreciendo el enfoque de DDD. 
 
-Los principales patrones y estilos de arquitectura que guían este bloque son
+Los principales patrones y estilos de arquitectura que guían este bloque son :
 
 #### Arquitectura hexagonal
 Arquitectura que fomenta  que nuestro dominio sea el núcleo de todas las capas, también conocida como puertos y adaptadores en la cual el dominio define los puertos y en las capas superiores se definen los adaptadores para desacoplar el dominio. Se divide princialmente en tres capas, **aplicación**, **dominio** e **infraestructura**
