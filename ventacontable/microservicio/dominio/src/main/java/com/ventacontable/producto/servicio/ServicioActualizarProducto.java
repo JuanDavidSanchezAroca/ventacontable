@@ -6,6 +6,9 @@ import com.ventacontable.producto.modelo.entidad.Producto;
 import com.ventacontable.producto.puerto.dao.DaoProducto;
 import com.ventacontable.producto.puerto.repositorio.RepositorioProducto;
 
+/**
+ * Actualizar producto
+ */
 public class ServicioActualizarProducto {
 
     private static final String NO_EXISTE_PRODUCTO="El producto ingresado no existe";

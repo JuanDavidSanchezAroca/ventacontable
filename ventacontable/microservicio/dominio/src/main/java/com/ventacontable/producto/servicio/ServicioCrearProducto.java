@@ -4,6 +4,9 @@ import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
 import com.ventacontable.producto.modelo.entidad.Producto;
 import com.ventacontable.producto.puerto.repositorio.RepositorioProducto;
 
+/**
+ * Esta es una clase
+ */
 public class ServicioCrearProducto {
 
     private static final String YA_EXISTE_NOMBRE_PRODUCTO="Ya existe el nombre del producto";
