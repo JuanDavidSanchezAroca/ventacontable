@@ -7,7 +7,7 @@ import com.ventacontable.producto.puerto.dao.DaoProducto;
 import com.ventacontable.producto.puerto.repositorio.RepositorioProducto;
 
 /**
- * Actualizar
+ * Actualizar producto
  */
 public class ServicioActualizarProducto {
 
