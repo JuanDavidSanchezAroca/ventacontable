@@ -68,7 +68,7 @@ dependencies {
     	compile.exclude module: 'spring-boot-starter-tomcat'
 	}
 
-	compile project.ext.springbootweb
+	implementation project.ext.springbootweb
 	runtimeOnly project.ext.springdevtools
 	
 	implementation project.ext.springbootundertow
@@ -77,8 +77,7 @@ dependencies {
 	implementation project(':infraestructura')
 }
 
-bootJar {
-	mainClassName = 'com.ventacontable.Application'
-    baseName = 'ventacontable'
+springBoot {
+	mainClass = 'com.ventacontable.Application'
     version =  version
 }
