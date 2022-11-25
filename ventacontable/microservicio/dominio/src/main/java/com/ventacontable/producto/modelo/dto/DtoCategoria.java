@@ -1,8 +1,9 @@
-package com.ventacontable.producto.modelo.entidad;
+package com.ventacontable.producto.modelo.dto;
 
 import lombok.Getter;
 
 @Getter
-public class Categoria {
-
+public class DtoCategoria {
+    private int idCategoria;
+    private String nombre;
 }
