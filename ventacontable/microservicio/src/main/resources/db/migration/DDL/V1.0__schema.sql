@@ -110,8 +110,6 @@ CREATE TABLE HISTORIAL_ABONO(
 
 CREATE TABLE CATEGORIA(
     id_categoria serial PRIMARY KEY,
-    tipo_producto VARCHAR(100) NOT NULL,
-    categoria VARCHAR(100) NOT NULL,
     nombre VARCHAR(200) NOT NULL,
     descripcion VARCHAR(1000) NOT NULL
 );
