@@ -1,6 +1,6 @@
 package com.ventacontable.usuario.comando.fabrica;
 
-import com.ventacontable.usuario.modelo.entidad.Usuario;
+import com.ventacontable.usuario.modelo.Usuario;
 import org.springframework.stereotype.Component;
 
 import com.ventacontable.usuario.comando.ComandoUsuario;
