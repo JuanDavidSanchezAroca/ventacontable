@@ -15,6 +15,6 @@ dependencies {
 	implementation project(':comun:comun-aplicacion')
 	implementation project.ext.springtxt
 
-	compileOnly project.ext.lombok
+	implementation project.ext.lombok
 	annotationProcessor project.ext.lombok
 }
