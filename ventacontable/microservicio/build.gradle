@@ -79,6 +79,4 @@ dependencies {
 
 bootJar {
 	mainClassName = 'com.ventacontable.Application'
-    baseName = 'ventacontable'
-    version =  version
 }
