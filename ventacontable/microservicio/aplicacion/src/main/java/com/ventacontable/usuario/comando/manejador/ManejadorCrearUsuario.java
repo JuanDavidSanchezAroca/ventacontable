@@ -2,7 +2,7 @@ package com.ventacontable.usuario.comando.manejador;
 
 import com.ventacontable.ComandoRespuesta;
 import com.ventacontable.manejador.ManejadorComandoRespuesta;
-import com.ventacontable.usuario.modelo.entidad.Usuario;
+import com.ventacontable.usuario.modelo.Usuario;
 import com.ventacontable.usuario.servicio.ServicioCrearUsuario;
 import com.ventacontable.usuario.comando.fabrica.FabricaUsuario;
 import org.springframework.stereotype.Component;
