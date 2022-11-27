@@ -19,7 +19,7 @@ dependencies {
 
 	implementation project(':comun:comun-dominio')
 
-	compileOnly project.ext.lombok
+	implementation project.ext.lombok
 	annotationProcessor project.ext.lombok
 }
 

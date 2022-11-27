@@ -32,7 +32,7 @@ allprojects {
 			"io.springfox:springfox-swagger2:2.9.2"
 	]
 
-	project.ext.db = ["org.postgresql:postgresql:42.1.4"]
+	project.ext.db = ["org.postgresql:postgresql:42.5.1"]
 
 	project.ext.springbootjdbc = ["org.springframework.boot:spring-boot-starter-jdbc:${springBootVersion}"]
 	project.ext.flyway = ["org.flywaydb:flyway-core:5.2.1"]
@@ -68,7 +68,7 @@ dependencies {
     	compile.exclude module: 'spring-boot-starter-tomcat'
 	}
 
-	compile project.ext.springbootweb
+	implementation project.ext.springbootweb
 	runtimeOnly project.ext.springdevtools
 	
 	implementation project.ext.springbootundertow
