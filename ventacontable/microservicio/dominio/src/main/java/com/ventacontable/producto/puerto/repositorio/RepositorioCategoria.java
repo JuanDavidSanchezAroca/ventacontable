@@ -9,7 +9,7 @@ public interface RepositorioCategoria {
      * @param categoria
      * @return el id generado
      */
-    Long crear(Categoria categoria);
+    int crear(Categoria categoria);
 
     /**
      * Permite eliminar una categoria

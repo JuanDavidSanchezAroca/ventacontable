@@ -12,7 +12,7 @@ public class ServicioCrearCategoria {
         this.repositorioCategoria = repositorioCategoria;
     }
 
-    public long ejecutar(Categoria categoria) {
+    public int ejecutar(Categoria categoria) {
         this.validarExistenciaNombreCategoria(categoria.getNombre());
         return this.repositorioCategoria.crear(categoria);
     }
