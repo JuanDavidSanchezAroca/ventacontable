@@ -20,6 +20,11 @@ public class ValidadorArgumento {
             throw new ExcepcionValorObligatorio(mensaje);
         }
     }
+    public static  void validarNoVacio(String valor, String mensaje){
+        if(valor.trim().equals("")){
+            throw new ExcepcionValorInvalido(mensaje);
+        }
+    }
     
     public static void validarLongitud(String valor,int longitud,String mensaje){
         if(valor.length() < longitud){
