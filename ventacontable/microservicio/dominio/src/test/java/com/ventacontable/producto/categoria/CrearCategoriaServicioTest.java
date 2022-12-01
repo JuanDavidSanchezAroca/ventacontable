@@ -25,13 +25,13 @@ public class CrearCategoriaServicioTest {
     private ServicioCrearCategoria servicioCrearCategoria;
 
     @Before
-    public void configuracion(){
+    public void configuracion() {
         repositorioCategoria = Mockito.mock(RepositorioCategoria.class);
         //daoPermiso = Mockito.mock(DaoPermiso.class);
     }
 
     @Test
-    public void registrarCategoria(){
+    public void registrarCategoria() {
         //Arrange
         Categoria categoria = new CategoriaBuilder().build();
         //Mockito.when(daoPermiso.buscar(Mockito.any())).thenReturn(false);
@@ -40,24 +40,9 @@ public class CrearCategoriaServicioTest {
         //Act
         int idRespuesta = servicioCrearCategoria.ejecutar(categoria);
         //Assert
-        Assert.assertEquals(1,idRespuesta);
+        Assert.assertEquals(1, idRespuesta);
     }
 
-//    @Test
-//    public void errorPermisoYaExiste(){
-//        //Arrange
-//        Permiso permiso = new PermisoBuilder().build();
-//        Mockito.when(daoPermiso.buscar(Mockito.any())).thenReturn(true);
-//        Mockito.when(repositorioPermiso.registrar(Mockito.any())).thenReturn(1);
-//        crearPermisoServicio = new CrearPermisoServicio(repositorioPermiso,daoPermiso);
-//        //Act
-//        try {
-//            crearPermisoServicio.ejecutar(permiso);
-//        }catch (ExcepcionNegocio e){
-//            //Assert
-//            Assert.assertEquals("El permiso ingresado ya existe",e.getMessage());
-//        }
-//    }
 }
 
 
