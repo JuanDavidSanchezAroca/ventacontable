@@ -27,7 +27,6 @@ public class CrearCategoriaServicioTest {
     @Before
     public void configuracion() {
         repositorioCategoria = Mockito.mock(RepositorioCategoria.class);
-        //daoPermiso = Mockito.mock(DaoPermiso.class);
     }
 
     @Test
