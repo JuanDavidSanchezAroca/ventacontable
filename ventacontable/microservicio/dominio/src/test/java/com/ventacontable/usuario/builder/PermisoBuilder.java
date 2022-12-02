@@ -22,6 +22,6 @@ public class PermisoBuilder {
     }
 
     public Permiso build(){
-        return new Permiso(id,nombre);
+        return new Permiso(nombre);
     }
 }

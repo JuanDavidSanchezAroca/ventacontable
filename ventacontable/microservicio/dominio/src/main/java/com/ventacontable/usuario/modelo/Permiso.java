@@ -12,10 +12,11 @@ public class Permiso {
     private Integer id;
     private String nombre;
 
-    public Permiso(Integer id,String nombre){
+    public Permiso(String nombre){
         validarObligatorio(nombre,NOMBRE_REQUERIDO);
         validarNoVacio(nombre,NOMBRE_INVALIDO);
         this.id = id;
         this.nombre = nombre;
     }
+
 }
