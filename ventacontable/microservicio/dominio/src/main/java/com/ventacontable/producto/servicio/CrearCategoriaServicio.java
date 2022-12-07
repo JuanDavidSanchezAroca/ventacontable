@@ -2,14 +2,17 @@ package com.ventacontable.producto.servicio;
 
 import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
 import com.ventacontable.producto.modelo.entidad.Categoria;
+import com.ventacontable.producto.puerto.dao.DaoCategoria;
 import com.ventacontable.producto.puerto.repositorio.RepositorioCategoria;
 
-public class ServicioCrearCategoria {
+public class CrearCategoriaServicio {
     private static final String YA_EXISTE_NOMBRE_CATEGORIA = "El nombre ya se usa en una categoria";
     private final RepositorioCategoria repositorioCategoria;
+    private final DaoCategoria daoCategoria;
 
-    public ServicioCrearCategoria(RepositorioCategoria repositorioCategoria) {
+    public CrearCategoriaServicio(RepositorioCategoria repositorioCategoria, DaoCategoria daoCategoria) {
         this.repositorioCategoria = repositorioCategoria;
+        this.daoCategoria = daoCategoria;
     }
 
     public int ejecutar(Categoria categoria) {
@@ -18,7 +21,7 @@ public class ServicioCrearCategoria {
     }
 
     private void validarExistenciaNombreCategoria(String nombreCategoria) {
-        boolean existe = this.repositorioCategoria.existeNombreCategoria(nombreCategoria);
+        boolean existe = this.daoCategoria.existeNombreCategoria(nombreCategoria);
         if (existe) {
             throw new ExcepcionDuplicidad(YA_EXISTE_NOMBRE_CATEGORIA);
         }
