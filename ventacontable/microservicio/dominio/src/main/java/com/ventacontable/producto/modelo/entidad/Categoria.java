@@ -18,4 +18,9 @@ public class Categoria {
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
+    public Categoria(String nombre){
+        validarObligatorio(nombre, SE_DEBE_INGRESAR_NOMBRE_CATEGORIA);
+        this.idCategoria=idCategoria;
+        this.nombre=nombre;
+    }
 }

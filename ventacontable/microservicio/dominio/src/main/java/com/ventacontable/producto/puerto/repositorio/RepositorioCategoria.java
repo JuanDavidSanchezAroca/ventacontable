@@ -25,11 +25,5 @@ public interface RepositorioCategoria {
      */
     void actualizar(Categoria categoria);
 
-    /**
-     * Permite validar si el nombre de categoria ya existe
-     *
-     * @param nombreCategoria
-     * @return true si existe, false en caso contrario
-     */
-    boolean existeNombreCategoria(String nombreCategoria);
+
 }
