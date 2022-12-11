@@ -1,9 +1,9 @@
 package com.ventacontable.usuario.permiso;
 
 import com.ventacontable.core.BasePrueba;
+import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
 import com.ventacontable.dominio.excepcion.ExcepcionValorInvalido;
 import com.ventacontable.dominio.excepcion.ExcepcionValorObligatorio;
-import com.ventacontable.excepcion.ExcepcionNegocio;
 import com.ventacontable.usuario.builder.PermisoBuilder;
 import com.ventacontable.usuario.modelo.Permiso;
 import com.ventacontable.usuario.puerto.dao.DaoPermiso;
@@ -58,7 +58,7 @@ public class CrearPermisoServicioTest {
         crearPermisoServicio = new CrearPermisoServicio(repositorioPermiso, daoPermiso);
         try {
             crearPermisoServicio.ejecutar(permiso);
-        } catch (ExcepcionNegocio e) {
+        } catch (ExcepcionDuplicidad e) {
             Assert.assertEquals("El permiso ingresado ya existe", e.getMessage());
         }
     }
