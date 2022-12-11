@@ -41,6 +41,8 @@ allprojects {
 	project.ext.h2 = ["com.h2database:h2:1.4.194"]
 }
 
+
+
 buildscript {
 	repositories {
 		mavenCentral()
@@ -75,6 +77,10 @@ dependencies {
 	implementation project.ext.flyway
 
 	implementation project(':infraestructura')
+
+	test {
+		useJUnitPlatform()
+	}
 }
 
 bootJar {

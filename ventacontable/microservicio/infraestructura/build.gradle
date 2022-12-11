@@ -16,7 +16,7 @@ dependencies {
 	testImplementation project.ext.springboottest
 	implementation project.ext.springbootweb
 	implementation project.ext.swagger
-
+	implementation project.ext.lombok
 	implementation project.ext.apachecommons
 	implementation project.ext.springbootjdbc
 	runtimeOnly project.ext.db
