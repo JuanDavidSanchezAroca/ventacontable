@@ -4,7 +4,7 @@ import com.ventacontable.comando.producto.categoria.ComandoCategoria;
 import com.ventacontable.comando.producto.categoria.fabrica.CategoriaFabrica;
 import com.ventacontable.manejador.ManejadorComandoRespuesta;
 import com.ventacontable.producto.modelo.entidad.Categoria;
-import com.ventacontable.producto.servicio.CrearCategoriaServicio;
+import com.ventacontable.producto.servicio.categoria.CrearCategoriaServicio;
 import org.springframework.stereotype.Component;
 
 

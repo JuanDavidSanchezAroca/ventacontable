@@ -12,7 +12,7 @@ public class Categoria {
     private String nombre;
     private String descripcion;
 
-    public Categoria(int idCategoria, String nombre, String descripcion) {
+    public Categoria(String nombre, String descripcion) {
         validarObligatorio(nombre, SE_DEBE_INGRESAR_NOMBRE_CATEGORIA);
         this.idCategoria = idCategoria;
         this.nombre = nombre;

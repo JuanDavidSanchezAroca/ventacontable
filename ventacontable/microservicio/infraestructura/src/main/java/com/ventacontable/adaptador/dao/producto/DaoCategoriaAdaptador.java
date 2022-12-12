@@ -10,10 +10,14 @@ import org.springframework.stereotype.Component;
 public class DaoCategoriaAdaptador implements DaoCategoria {
 
     private static final String NOMBRE = "nombre";
+    private static final String ID = "id";
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
     @SqlStatement(namespace = "categoria", value = "buscar_nombre")
     private static String sqlBuscarNombre;
+
+    @SqlStatement(namespace = "categoria", value = "buscar_id_nombre")
+    private static String sqlBuscarIdNombre;
 
     public DaoCategoriaAdaptador(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate){
         this.customNamedParameterJdbcTemplate=customNamedParameterJdbcTemplate;
@@ -26,5 +30,14 @@ public class DaoCategoriaAdaptador implements DaoCategoria {
 
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
                 .queryForObject(sqlBuscarNombre, paramSource, Boolean.class);
+    }
+
+    @Override
+    public boolean existeNombreCategoria(Integer idCategoria, String nombreCategoria) {
+        MapSqlParameterSource parameterSource= new MapSqlParameterSource();
+        parameterSource.addValue(NOMBRE, nombreCategoria);
+        parameterSource.addValue(ID, idCategoria);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
+                .queryForObject(sqlBuscarIdNombre, parameterSource, Boolean.class);
     }
 }

@@ -23,7 +23,7 @@ public interface RepositorioCategoria {
      *
      * @param categoria
      */
-    void actualizar(Categoria categoria);
+    int actualizar(Categoria categoria, Integer idCategoria);
 
 
 }

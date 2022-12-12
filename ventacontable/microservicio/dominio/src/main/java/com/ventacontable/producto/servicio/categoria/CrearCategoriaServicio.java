@@ -1,4 +1,4 @@
-package com.ventacontable.producto.servicio;
+package com.ventacontable.producto.servicio.categoria;
 
 import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
 import com.ventacontable.producto.modelo.entidad.Categoria;
