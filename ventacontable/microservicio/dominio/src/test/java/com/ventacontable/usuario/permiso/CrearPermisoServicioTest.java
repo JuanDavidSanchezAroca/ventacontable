@@ -8,7 +8,7 @@ import com.ventacontable.usuario.builder.PermisoBuilder;
 import com.ventacontable.usuario.modelo.Permiso;
 import com.ventacontable.usuario.puerto.dao.DaoPermiso;
 import com.ventacontable.usuario.puerto.repositorio.RepositorioPermiso;
-import com.ventacontable.usuario.servicio.CrearPermisoServicio;
+import com.ventacontable.usuario.servicio.permiso.CrearPermisoServicio;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,7 +43,7 @@ public class CrearPermisoServicioTest {
     @Test
     public void registrarPermiso() {
         Permiso permiso = new PermisoBuilder().build();
-        Mockito.when(daoPermiso.buscar(Mockito.any())).thenReturn(false);
+        Mockito.when(daoPermiso.buscarNombre(Mockito.any())).thenReturn(false);
         Mockito.when(repositorioPermiso.registrar(Mockito.any())).thenReturn(1);
         crearPermisoServicio = new CrearPermisoServicio(repositorioPermiso, daoPermiso);
         int idRespuesta = crearPermisoServicio.ejecutar(permiso);
@@ -53,7 +53,7 @@ public class CrearPermisoServicioTest {
     @Test
     public void errorPermisoYaExiste() {
         Permiso permiso = new PermisoBuilder().build();
-        Mockito.when(daoPermiso.buscar(Mockito.any())).thenReturn(true);
+        Mockito.when(daoPermiso.buscarNombre(Mockito.any())).thenReturn(true);
         Mockito.when(repositorioPermiso.registrar(Mockito.any())).thenReturn(1);
         crearPermisoServicio = new CrearPermisoServicio(repositorioPermiso, daoPermiso);
         try {

@@ -7,5 +7,12 @@ public interface DaoPermiso {
      * @param nombre nombre del permiso
      * @return true si existe, false, caso contrario
      */
-    boolean buscar(String nombre);
+    boolean buscarNombre(String nombre);
+
+    /**
+     * Metodo que nos retorna si el nombre del permiso existe
+     * @param id identificador del permiso
+     * @return true si existe, false, caso contrario
+     */
+    boolean buscarId(Integer id);
 }

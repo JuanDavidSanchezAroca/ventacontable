@@ -4,7 +4,7 @@ import com.ventacontable.comando.usuario.permiso.ComandoPermiso;
 import com.ventacontable.comando.usuario.permiso.fabrica.PermisoFabrica;
 import com.ventacontable.manejador.ManejadorComandoRespuesta;
 import com.ventacontable.usuario.modelo.Permiso;
-import com.ventacontable.usuario.servicio.CrearPermisoServicio;
+import com.ventacontable.usuario.servicio.permiso.CrearPermisoServicio;
 import org.springframework.stereotype.Component;
 
 @Component

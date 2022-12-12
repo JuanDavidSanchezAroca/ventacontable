@@ -1,8 +1,6 @@
-package com.ventacontable.usuario.servicio;
+package com.ventacontable.usuario.servicio.permiso;
 
 import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
-import com.ventacontable.dominio.excepcion.ExcepcionSinDatos;
-import com.ventacontable.excepcion.ExcepcionNegocio;
 import com.ventacontable.usuario.modelo.Permiso;
 import com.ventacontable.usuario.puerto.dao.DaoPermiso;
 import com.ventacontable.usuario.puerto.repositorio.RepositorioPermiso;
@@ -25,7 +23,7 @@ public class CrearPermisoServicio {
     }
 
     private void validarPreviaExistencia(String nombre) {
-        if (daoPermiso.buscar(nombre)) {
+        if (daoPermiso.buscarNombre(nombre)) {
             throw new ExcepcionDuplicidad(YA_EXISTE_PERMISO);
         }
     }
