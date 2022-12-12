@@ -1,14 +1,14 @@
 package com.ventacontable.usuario.permiso;
 
 import com.ventacontable.core.BasePrueba;
+import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
 import com.ventacontable.dominio.excepcion.ExcepcionValorInvalido;
 import com.ventacontable.dominio.excepcion.ExcepcionValorObligatorio;
-import com.ventacontable.excepcion.ExcepcionNegocio;
 import com.ventacontable.usuario.builder.PermisoBuilder;
 import com.ventacontable.usuario.modelo.Permiso;
 import com.ventacontable.usuario.puerto.dao.DaoPermiso;
 import com.ventacontable.usuario.puerto.repositorio.RepositorioPermiso;
-import com.ventacontable.usuario.servicio.CrearPermisoServicio;
+import com.ventacontable.usuario.servicio.permiso.CrearPermisoServicio;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,7 +43,7 @@ public class CrearPermisoServicioTest {
     @Test
     public void registrarPermiso() {
         Permiso permiso = new PermisoBuilder().build();
-        Mockito.when(daoPermiso.buscar(Mockito.any())).thenReturn(false);
+        Mockito.when(daoPermiso.buscarNombre(Mockito.any())).thenReturn(false);
         Mockito.when(repositorioPermiso.registrar(Mockito.any())).thenReturn(1);
         crearPermisoServicio = new CrearPermisoServicio(repositorioPermiso, daoPermiso);
         int idRespuesta = crearPermisoServicio.ejecutar(permiso);
@@ -53,12 +53,12 @@ public class CrearPermisoServicioTest {
     @Test
     public void errorPermisoYaExiste() {
         Permiso permiso = new PermisoBuilder().build();
-        Mockito.when(daoPermiso.buscar(Mockito.any())).thenReturn(true);
+        Mockito.when(daoPermiso.buscarNombre(Mockito.any())).thenReturn(true);
         Mockito.when(repositorioPermiso.registrar(Mockito.any())).thenReturn(1);
         crearPermisoServicio = new CrearPermisoServicio(repositorioPermiso, daoPermiso);
         try {
             crearPermisoServicio.ejecutar(permiso);
-        } catch (ExcepcionNegocio e) {
+        } catch (ExcepcionDuplicidad e) {
             Assert.assertEquals("El permiso ingresado ya existe", e.getMessage());
         }
     }
