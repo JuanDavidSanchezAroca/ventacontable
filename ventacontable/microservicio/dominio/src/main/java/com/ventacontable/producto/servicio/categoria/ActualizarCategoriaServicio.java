@@ -1,5 +1,6 @@
 package com.ventacontable.producto.servicio.categoria;
 
+import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
 import com.ventacontable.producto.modelo.entidad.Categoria;
 import com.ventacontable.producto.puerto.dao.DaoCategoria;
 import com.ventacontable.producto.puerto.repositorio.RepositorioCategoria;
@@ -22,6 +23,6 @@ public class ActualizarCategoriaServicio {
     private void validarExistenciaNombreEnOtraCategoria(String nombreCategoria, Integer idCategoria){
         boolean existe = daoCategoria.existeNombreCategoria(idCategoria, nombreCategoria);
         if (existe)
-            throw new RuntimeException(YA_EXISTE_NOMBRE_CATEGORIA);
+            throw new ExcepcionDuplicidad(YA_EXISTE_NOMBRE_CATEGORIA);
     }
 }
