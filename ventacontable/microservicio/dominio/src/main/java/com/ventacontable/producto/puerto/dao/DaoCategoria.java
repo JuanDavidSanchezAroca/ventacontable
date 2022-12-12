@@ -17,4 +17,12 @@ public interface DaoCategoria {
      */
     boolean existeNombreCategoria(Integer idCategoria, String nombreCategoria);
 
+    /**
+     * Permite validar si existe categoria con id
+     *
+     * @param idCategoria
+     * @return true si existe, false en caso contrario
+     */
+    boolean existeIdCategoria(Integer idCategoria);
+
 }

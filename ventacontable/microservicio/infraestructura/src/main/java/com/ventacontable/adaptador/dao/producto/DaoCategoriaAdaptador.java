@@ -19,6 +19,9 @@ public class DaoCategoriaAdaptador implements DaoCategoria {
     @SqlStatement(namespace = "categoria", value = "buscar_id_nombre")
     private static String sqlBuscarIdNombre;
 
+    @SqlStatement(namespace = "categoria", value = "buscar_por_id.sql")
+    private static String sqlBuscarPorId;
+
     public DaoCategoriaAdaptador(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate){
         this.customNamedParameterJdbcTemplate=customNamedParameterJdbcTemplate;
     }
@@ -39,5 +42,14 @@ public class DaoCategoriaAdaptador implements DaoCategoria {
         parameterSource.addValue(ID, idCategoria);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
                 .queryForObject(sqlBuscarIdNombre, parameterSource, Boolean.class);
+    }
+
+    @Override
+    public boolean existeIdCategoria(Integer idCategoria) {
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue(ID, idCategoria);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
+                .queryForObject(sqlBuscarPorId, parameterSource, Boolean.class);
+
     }
 }
