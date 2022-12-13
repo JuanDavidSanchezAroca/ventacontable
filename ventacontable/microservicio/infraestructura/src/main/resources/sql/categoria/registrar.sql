@@ -1,1 +1,1 @@
-INSERT INTO categoria(nombre) VALUES(:nombre)
+INSERT INTO categoria(nombre, descripcion) VALUES(:nombre, :descripcion)

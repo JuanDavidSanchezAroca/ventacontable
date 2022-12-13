@@ -11,4 +11,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ComandoCategoria {
     private String nombre;
+    private String descripcion;
 }

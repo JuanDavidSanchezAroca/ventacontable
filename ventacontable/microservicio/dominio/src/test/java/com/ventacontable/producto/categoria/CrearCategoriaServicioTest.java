@@ -3,7 +3,7 @@ package com.ventacontable.producto.categoria;
 import com.ventacontable.producto.modelo.entidad.Categoria;
 import com.ventacontable.producto.puerto.dao.DaoCategoria;
 import com.ventacontable.producto.puerto.repositorio.RepositorioCategoria;
-import com.ventacontable.producto.servicio.CrearCategoriaServicio;
+import com.ventacontable.producto.servicio.categoria.CrearCategoriaServicio;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
