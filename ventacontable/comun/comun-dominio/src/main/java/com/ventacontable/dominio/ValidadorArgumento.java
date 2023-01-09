@@ -20,6 +20,11 @@ public class ValidadorArgumento {
             throw new ExcepcionValorObligatorio(mensaje);
         }
     }
+    public static  void validarNoVacio(String valor, String mensaje){
+        if(valor.trim().equals("")){
+            throw new ExcepcionValorInvalido(mensaje);
+        }
+    }
     
     public static void validarLongitud(String valor,int longitud,String mensaje){
         if(valor.length() < longitud){
@@ -33,14 +38,8 @@ public class ValidadorArgumento {
         }
     }
 
-    public static void validarPositivo(Double valor, String mensaje) {
-        if (valor <= 0) {
-            throw new ExcepcionValorInvalido(mensaje);
-        }
-    }
-
-    public static void validarPositivo(Integer valor, String mensaje) {
-        if (valor <= 0) {
+    public static void validarPositivo(Object valor, String mensaje) {
+        if ((Double) valor <= 0) {
             throw new ExcepcionValorInvalido(mensaje);
         }
     }
