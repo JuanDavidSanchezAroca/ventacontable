@@ -1,7 +1,7 @@
 package com.ventacontable.venta;
 
 import com.ventacontable.comun.modelo.Item;
-import com.ventacontable.usuario.modelo.Persona;
+import com.ventacontable.persona.modelo.entidad.Persona;
 import lombok.Getter;
 
 import java.time.LocalDate;
