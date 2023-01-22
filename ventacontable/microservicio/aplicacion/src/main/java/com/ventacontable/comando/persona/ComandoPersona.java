@@ -25,7 +25,7 @@ public class ComandoPersona {
     private String telefono;
     private String genero;
     private String direccion;
-    private Usuario usuario;
-    private Rol rol;
+    private Integer usuario;
+    private Integer rol;
 
 }

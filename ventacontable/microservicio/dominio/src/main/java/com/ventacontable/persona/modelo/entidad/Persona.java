@@ -29,20 +29,20 @@ public class Persona {
     private String telefono;
     private Genero genero;
     private String direccion;
-    private Usuario usuario;
-    private Rol rol;
+    private Integer usuario;
+    private Integer rol;
 
     public Persona(String identificacion, String nombre, String apellido, String tipoDocumento, String telefono, String genero, String direccion, LocalDate fechaNacimiento,
-                   Rol rol, Usuario usuario) {
+                   Integer rol, Integer usuario) {
         validarObligatorio(identificacion, IDENTIFICACION_OBLIGATORIA);
         validarObligatorio(nombre, NOMBRE_OBLIGATORIO);
         validarObligatorio(apellido, APELLIDO_OBLIGATORIO);
         validarObligatorio(tipoDocumento, TIPO_DOCUMENTO_OBLIGATORIO);
-        validarValido(tipoDocumento, TipoDocumento.class, TIPO_DOCUMENTO_INCORRECTO);
-        validarValido(genero, Genero.class, GENERO_INCORRECTO);
         validarObligatorio(telefono, TELEFONO_OBLIGATORIO);
         validarObligatorio(genero, GENERO_OBLIGATORIO);
         validarObligatorio(direccion, DIRECCION_OBLIGATORIA);
+        validarValido(tipoDocumento, TipoDocumento.class, TIPO_DOCUMENTO_INCORRECTO);
+        validarValido(genero, Genero.class, GENERO_INCORRECTO);
 
         this.identificacion = identificacion;
         this.nombre = nombre;
