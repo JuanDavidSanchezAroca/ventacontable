@@ -7,10 +7,6 @@ import com.ventacontable.comando.producto.categoria.manejador.ManejadorCrearCate
 import com.ventacontable.producto.modelo.entidad.Categoria;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 @RestController
 @RequestMapping("/categoria")
 public class ComandoControladorCategoria {
@@ -32,13 +28,8 @@ public class ComandoControladorCategoria {
 
     @PutMapping("/{id}")
     public ComandoRespuesta<Integer> actualizar(@RequestBody ComandoCategoria comandoCategoria,
-                                                @PathVariable Integer id){
+                                                @PathVariable Integer id) {
         return new ComandoRespuesta<>(this.manejadorActualizarCategoria.ejecutar(comandoCategoria, id));
-    }
-
-    @GetMapping
-    public ComandoRespuesta<Categoria> consultarCategorias(){
-        return new ComandoRespuesta<>(new Categoria("aa","daf"));
     }
 }
 

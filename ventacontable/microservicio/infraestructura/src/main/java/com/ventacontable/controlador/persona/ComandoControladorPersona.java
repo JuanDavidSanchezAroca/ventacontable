@@ -21,14 +21,7 @@ public class ComandoControladorPersona {
     }
 
     @PostMapping
-    public Object crear(@RequestBody ComandoPersona comandoPersona) {
-
-        System.out.println(comandoPersona.getTipoDocumento());
-        try {
-            return new ComandoRespuesta<>(this.manejadorCrearPersona.ejecutar(comandoPersona));
-
-        }catch (Error e){
-            return e;
-        }
+    public ComandoRespuesta<Integer> crear(@RequestBody ComandoPersona comandoPersona) {
+        return new ComandoRespuesta<>(this.manejadorCrearPersona.ejecutar(comandoPersona));
     }
 }
