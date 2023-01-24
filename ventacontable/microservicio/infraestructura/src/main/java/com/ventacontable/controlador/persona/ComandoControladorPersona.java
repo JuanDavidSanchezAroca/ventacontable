@@ -3,10 +3,6 @@ package com.ventacontable.controlador.persona;
 import com.ventacontable.ComandoRespuesta;
 import com.ventacontable.comando.persona.ComandoPersona;
 import com.ventacontable.comando.persona.manejador.ManejadorCrearPersona;
-import com.ventacontable.comando.producto.categoria.ComandoCategoria;
-import com.ventacontable.comando.producto.categoria.manejador.ManejadorActualizarCategoria;
-import com.ventacontable.comando.producto.categoria.manejador.ManejadorCrearCategoria;
-import com.ventacontable.producto.modelo.entidad.Categoria;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.logging.Logger;

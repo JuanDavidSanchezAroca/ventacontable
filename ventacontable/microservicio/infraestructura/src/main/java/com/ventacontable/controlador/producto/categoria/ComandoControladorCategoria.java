@@ -4,7 +4,6 @@ import com.ventacontable.ComandoRespuesta;
 import com.ventacontable.comando.producto.categoria.ComandoCategoria;
 import com.ventacontable.comando.producto.categoria.manejador.ManejadorActualizarCategoria;
 import com.ventacontable.comando.producto.categoria.manejador.ManejadorCrearCategoria;
-import com.ventacontable.producto.modelo.entidad.Categoria;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
