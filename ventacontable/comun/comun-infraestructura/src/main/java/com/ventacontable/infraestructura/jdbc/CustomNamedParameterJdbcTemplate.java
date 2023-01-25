@@ -47,7 +47,11 @@ public class CustomNamedParameterJdbcTemplate {
 				Field field = fields[i];
 				if (!Modifier.isStatic(field.getModifiers()) && !Modifier.isFinal(field.getModifiers())) {
 					field.setAccessible(true);
-					paramSource.addValue(field.getName(), field.get(object));
+					if(field.getType().isEnum()) {
+						paramSource.addValue(field.getName(), field.get(object).toString());
+					}else {
+						paramSource.addValue(field.getName(), field.get(object));
+					}
 					field.setAccessible(false);
 				}
 			} catch (Exception e) {
