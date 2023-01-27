@@ -1,5 +1,7 @@
 package com.ventacontable.usuario.puerto.dao;
 
+import com.ventacontable.usuario.modelo.Usuario;
+
 public interface DaoUsuario {
 
     /**
@@ -17,6 +19,8 @@ public interface DaoUsuario {
      * @return true si existe, false, caso contrario
      */
     boolean buscarId(Integer id);
+
+    boolean validarUsuarioPassword(Usuario usuario);
 }
 
 
