@@ -25,11 +25,6 @@ public class RepositorioUsuarioAdaptador implements RepositorioUsuario {
     }
 
     @Override
-    public Integer actualizar(Usuario usuario) {
-        return null;
-    }
-
-    @Override
     public Integer actualizar(Usuario usuario, Integer id) {
         this.customNamedParameterJdbcTemplate.actualizar(usuario, sqlActualizar, id);
         return id;

@@ -16,12 +16,5 @@ public interface RepositorioUsuario {
          * @param usuario usuario
          * @return identificador del permiso
          */
-        Integer actualizar(Usuario usuario);
-
-        /**
-         * Metodo que permite actualizar un usuario
-         * @param usuario usuario
-         * @return identificador del permiso
-         */
         Integer actualizar(Usuario usuario, Integer id);
 }
