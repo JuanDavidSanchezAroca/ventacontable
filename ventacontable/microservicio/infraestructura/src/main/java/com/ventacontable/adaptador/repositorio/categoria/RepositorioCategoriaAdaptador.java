@@ -1,10 +1,9 @@
-package com.ventacontable.adaptador.repositorio.producto;
+package com.ventacontable.adaptador.repositorio.categoria;
 
 import com.ventacontable.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ventacontable.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ventacontable.producto.modelo.entidad.Categoria;
-import com.ventacontable.producto.puerto.repositorio.RepositorioCategoria;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import com.ventacontable.categoria.modelo.Categoria;
+import com.ventacontable.categoria.puerto.repositorio.RepositorioCategoria;
 import org.springframework.stereotype.Repository;
 
 @Repository

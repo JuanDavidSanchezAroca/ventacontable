@@ -1,7 +1,7 @@
 package com.ventacontable.producto.builder;
 
 
-import com.ventacontable.producto.modelo.entidad.Categoria;
+import com.ventacontable.categoria.modelo.Categoria;
 
 public class CategoriaBuilder {
     private String nombre;

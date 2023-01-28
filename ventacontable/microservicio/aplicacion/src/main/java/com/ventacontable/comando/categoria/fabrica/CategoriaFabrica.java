@@ -1,7 +1,7 @@
-package com.ventacontable.comando.producto.categoria.fabrica;
+package com.ventacontable.comando.categoria.fabrica;
 
-import com.ventacontable.comando.producto.categoria.ComandoCategoria;
-import com.ventacontable.producto.modelo.entidad.Categoria;
+import com.ventacontable.comando.categoria.ComandoCategoria;
+import com.ventacontable.categoria.modelo.Categoria;
 import org.springframework.stereotype.Component;
 
 @Component

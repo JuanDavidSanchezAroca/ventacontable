@@ -1,4 +1,4 @@
-package com.ventacontable.producto.modelo.entidad;
+package com.ventacontable.categoria.modelo;
 
 import lombok.Getter;
 import static com.ventacontable.dominio.ValidadorArgumento.validarObligatorio;

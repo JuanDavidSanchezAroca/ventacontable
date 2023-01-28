@@ -1,2 +1,2 @@
-INSERT INTO producto (nombre, descripcion,precio_minimo,precio_maximo,precio_base)
-VALUES (:nombre, :descripcion, :precioMinimo, :precioMaximo, :precioBase);
+INSERT INTO producto (nombre, codigo, descripcion,precio_minimo,precio_maximo,precio_base,talla,color,cantidad_disponible)
+VALUES (:nombre, :codigo, :descripcion, :precioMinimo, :precioMaximo, :precioBase, :talla, :color, :cantidadDisponible);

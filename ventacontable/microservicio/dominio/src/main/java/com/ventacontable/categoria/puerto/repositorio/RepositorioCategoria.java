@@ -1,6 +1,6 @@
-package com.ventacontable.producto.puerto.repositorio;
+package com.ventacontable.categoria.puerto.repositorio;
 
-import com.ventacontable.producto.modelo.entidad.Categoria;
+import com.ventacontable.categoria.modelo.Categoria;
 
 public interface RepositorioCategoria {
     /**

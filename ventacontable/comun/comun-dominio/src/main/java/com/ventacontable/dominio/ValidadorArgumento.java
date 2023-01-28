@@ -39,7 +39,7 @@ public class ValidadorArgumento {
     }
 
     public static void validarPositivo(Object valor, String mensaje) {
-        if ((Double) valor <= 0) {
+        if (Double.valueOf(valor.toString()) <= 0) {
             throw new ExcepcionValorInvalido(mensaje);
         }
     }

@@ -1,9 +1,9 @@
-package com.ventacontable.producto.servicio.categoria;
+package com.ventacontable.categoria.servicio;
 
 import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
-import com.ventacontable.producto.modelo.entidad.Categoria;
-import com.ventacontable.producto.puerto.dao.DaoCategoria;
-import com.ventacontable.producto.puerto.repositorio.RepositorioCategoria;
+import com.ventacontable.categoria.modelo.Categoria;
+import com.ventacontable.categoria.puerto.dao.DaoCategoria;
+import com.ventacontable.categoria.puerto.repositorio.RepositorioCategoria;
 
 public class CrearCategoriaServicio {
     private static final String YA_EXISTE_NOMBRE_CATEGORIA = "El nombre ya se usa en una categoria";
