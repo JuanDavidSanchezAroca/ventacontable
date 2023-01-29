@@ -1,7 +1,6 @@
 package com.ventacontable.persona.puerto.repositorio;
 
 import com.ventacontable.persona.modelo.entidad.Persona;
-import com.ventacontable.producto.modelo.entidad.Categoria;
 
 public interface RepositorioPersona {
 
