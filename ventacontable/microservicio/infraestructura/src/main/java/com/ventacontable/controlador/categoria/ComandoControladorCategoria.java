@@ -1,9 +1,9 @@
-package com.ventacontable.controlador.categoria;
+package com.ventacontable.controlador.producto.categoria;
 
 import com.ventacontable.ComandoRespuesta;
-import com.ventacontable.comando.categoria.ComandoCategoria;
-import com.ventacontable.comando.categoria.manejador.ManejadorActualizarCategoria;
-import com.ventacontable.comando.categoria.manejador.ManejadorCrearCategoria;
+import com.ventacontable.comando.producto.categoria.ComandoCategoria;
+import com.ventacontable.comando.producto.categoria.manejador.ManejadorActualizarCategoria;
+import com.ventacontable.comando.producto.categoria.manejador.ManejadorCrearCategoria;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -27,7 +27,7 @@ public class ComandoControladorCategoria {
 
     @PutMapping("/{id}")
     public ComandoRespuesta<Integer> actualizar(@RequestBody ComandoCategoria comandoCategoria,
-                                                @PathVariable Integer id){
+                                                @PathVariable Integer id) {
         return new ComandoRespuesta<>(this.manejadorActualizarCategoria.ejecutar(comandoCategoria, id));
     }
 }

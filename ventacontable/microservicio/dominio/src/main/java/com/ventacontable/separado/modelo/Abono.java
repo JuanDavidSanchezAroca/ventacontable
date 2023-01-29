@@ -1,6 +1,6 @@
 package com.ventacontable.separado.modelo;
 
-import com.ventacontable.usuario.modelo.Persona;
+import com.ventacontable.persona.modelo.entidad.Persona;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
