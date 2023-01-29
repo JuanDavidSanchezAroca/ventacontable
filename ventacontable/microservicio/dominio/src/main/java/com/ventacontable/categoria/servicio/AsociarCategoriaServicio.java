@@ -1,5 +1,6 @@
 package com.ventacontable.categoria.servicio;
 
+import com.ventacontable.categoria.puerto.repositorio.RepositorioCategoria;
 import com.ventacontable.dominio.excepcion.ExcepcionSinDatos;
 import com.ventacontable.categoria.puerto.dao.DaoCategoria;
 import com.ventacontable.producto.puerto.dao.DaoProducto;
@@ -13,10 +14,13 @@ public class AsociarCategoriaServicio {
 
     private final DaoProducto daoProducto;
     private final DaoCategoria daoCategoria;
+    private final RepositorioCategoria repositorioCategoria;
 
-    public AsociarCategoriaServicio(DaoProducto daoProducto, DaoCategoria daoCategoria){
+    public AsociarCategoriaServicio(DaoProducto daoProducto, DaoCategoria daoCategoria,
+                                    RepositorioCategoria repositorioCategoria){
         this.daoProducto = daoProducto;
         this.daoCategoria = daoCategoria;
+        this.repositorioCategoria = repositorioCategoria;
     }
 
 
@@ -24,11 +28,12 @@ public class AsociarCategoriaServicio {
         validarPreviaExistenciaProducto(idProducto);
         List<Integer> categoriasValidas = daoCategoria.existeIdCategoriaBatch(categorias);
         validarCategoriasExistentes(categorias,categoriasValidas);
+        this.repositorioCategoria.asociarCategoriaProducto(idProducto,categorias);
     }
 
     private void validarCategoriasExistentes(List<Integer> categorias,List<Integer> categoriasExistentes){
-        categoriasExistentes.remove(categorias);
-        if(categoriasExistentes.size()>0){
+        categoriasExistentes.removeAll(categorias);
+        if(categoriasExistentes.size()> 0){
             throw new ExcepcionSinDatos(CATEGORIA_INVALIDA);
         }
     }
