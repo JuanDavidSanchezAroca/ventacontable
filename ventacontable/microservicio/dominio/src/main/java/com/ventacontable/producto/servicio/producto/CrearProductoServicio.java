@@ -3,20 +3,26 @@ package com.ventacontable.producto.servicio.producto;
 import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
 import com.ventacontable.producto.modelo.entidad.Producto;
 import com.ventacontable.producto.puerto.repositorio.RepositorioProducto;
+import com.ventacontable.categoria.servicio.AsociarCategoriaServicio;
 
-public class ServicioCrearProducto {
+public class CrearProductoServicio {
 
     private static final String YA_EXISTE_NOMBRE_PRODUCTO="Ya existe el nombre del producto";
 
     private final RepositorioProducto repositorioProducto;
+    private final AsociarCategoriaServicio asociarCategoriaServicio;
 
-    public ServicioCrearProducto(RepositorioProducto repositorioProducto) {
+    public CrearProductoServicio(RepositorioProducto repositorioProducto,
+                                 AsociarCategoriaServicio asociarCategoriaServicio) {
         this.repositorioProducto = repositorioProducto;
+        this.asociarCategoriaServicio = asociarCategoriaServicio;
     }
 
     public long ejecutar(Producto producto){
         this.validarPreviaExistenciaNombre(producto.getNombre());
-        return this.repositorioProducto.crear(producto);
+        long id = this.repositorioProducto.crear(producto);
+        asociarCategoriaServicio.ejecutar((int)id,producto.getCategorias());
+        return id;
     }
 
     private void validarPreviaExistenciaNombre(String nombre){

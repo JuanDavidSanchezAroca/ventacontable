@@ -1,4 +1,4 @@
-package com.ventacontable.comando.producto.categoria;
+package com.ventacontable.comando.categoria;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

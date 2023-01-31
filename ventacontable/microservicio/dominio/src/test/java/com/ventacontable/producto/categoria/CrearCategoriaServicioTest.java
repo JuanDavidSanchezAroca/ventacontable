@@ -1,9 +1,9 @@
 package com.ventacontable.producto.categoria;
 
-import com.ventacontable.producto.modelo.entidad.Categoria;
-import com.ventacontable.producto.puerto.dao.DaoCategoria;
-import com.ventacontable.producto.puerto.repositorio.RepositorioCategoria;
-import com.ventacontable.producto.servicio.categoria.CrearCategoriaServicio;
+import com.ventacontable.categoria.modelo.Categoria;
+import com.ventacontable.categoria.puerto.dao.DaoCategoria;
+import com.ventacontable.categoria.puerto.repositorio.RepositorioCategoria;
+import com.ventacontable.categoria.servicio.CrearCategoriaServicio;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

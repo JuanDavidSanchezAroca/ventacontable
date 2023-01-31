@@ -1,10 +1,13 @@
-package com.ventacontable.adaptador.dao.producto;
+package com.ventacontable.adaptador.dao.categoria;
 
+import com.ventacontable.adaptador.dao.categoria.mapeo.MapeoCategoria;
 import com.ventacontable.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ventacontable.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ventacontable.producto.puerto.dao.DaoCategoria;
+import com.ventacontable.categoria.puerto.dao.DaoCategoria;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class DaoCategoriaAdaptador implements DaoCategoria {
@@ -19,8 +22,11 @@ public class DaoCategoriaAdaptador implements DaoCategoria {
     @SqlStatement(namespace = "categoria", value = "buscar_id_nombre")
     private static String sqlBuscarIdNombre;
 
-    @SqlStatement(namespace = "categoria", value = "buscar_por_id.sql")
+    @SqlStatement(namespace = "categoria", value = "buscar_por_id")
     private static String sqlBuscarPorId;
+
+    @SqlStatement(namespace = "categoria", value = "obtener_por_id")
+    private static String sqlObtenerPorId;
 
     public DaoCategoriaAdaptador(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate){
         this.customNamedParameterJdbcTemplate=customNamedParameterJdbcTemplate;
@@ -51,5 +57,13 @@ public class DaoCategoriaAdaptador implements DaoCategoria {
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
                 .queryForObject(sqlBuscarPorId, parameterSource, Boolean.class);
 
+    }
+
+    @Override
+    public List<Integer> existeIdCategoriaBatch(List<Integer> categorias) {
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue(ID,categorias);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
+                .query(sqlObtenerPorId,parameterSource, new MapeoCategoria());
     }
 }

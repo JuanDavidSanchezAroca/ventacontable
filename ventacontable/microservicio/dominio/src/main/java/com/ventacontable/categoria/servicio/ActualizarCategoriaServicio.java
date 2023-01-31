@@ -1,10 +1,10 @@
-package com.ventacontable.producto.servicio.categoria;
+package com.ventacontable.categoria.servicio;
 
 import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
 import com.ventacontable.dominio.excepcion.ExcepcionSinDatos;
-import com.ventacontable.producto.modelo.entidad.Categoria;
-import com.ventacontable.producto.puerto.dao.DaoCategoria;
-import com.ventacontable.producto.puerto.repositorio.RepositorioCategoria;
+import com.ventacontable.categoria.modelo.Categoria;
+import com.ventacontable.categoria.puerto.dao.DaoCategoria;
+import com.ventacontable.categoria.puerto.repositorio.RepositorioCategoria;
 
 public class ActualizarCategoriaServicio {
     public static final String YA_EXISTE_NOMBRE_CATEGORIA = "Ya existe otra categoria con este nombre";
