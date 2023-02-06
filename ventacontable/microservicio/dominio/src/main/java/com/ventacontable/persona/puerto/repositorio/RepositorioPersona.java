@@ -2,7 +2,7 @@ package com.ventacontable.persona.puerto.repositorio;
 
 import com.ventacontable.persona.modelo.entidad.Persona;
 
-public interface RepositorioPersona {
+public interface RepositorioPersona<T> {
 
         /**
          * Permite crear una persona
@@ -23,8 +23,7 @@ public interface RepositorioPersona {
          * Permite actualizar una persona
          *
          * @param persona
-         * @param idPersona
          */
-        int actualizar(Persona persona, Integer idPersona);
+        T actualizar(Persona persona);
 
 }
