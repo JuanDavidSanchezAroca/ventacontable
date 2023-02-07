@@ -6,7 +6,7 @@ import com.ventacontable.persona.puerto.dao.DaoPersona;
 import com.ventacontable.persona.puerto.repositorio.RepositorioPersona;
 
 public class ActualizarPersonaServicio {
-    private static final String NO_EXISTE_PERSONA = "Id no encontrado";
+    private static final String NO_EXISTE_PERSONA = "identificacion no encontrada";
     private final RepositorioPersona repositorioPersona;
 
     private final DaoPersona daoPersona;
@@ -17,7 +17,7 @@ public class ActualizarPersonaServicio {
         this.daoPersona = daoPersona;
     }
 
-    public Object ejecutar(Persona persona) {
+    public String ejecutar(Persona persona) {
         validarExistencia(persona.getIdentificacion());
         return repositorioPersona.actualizar(persona);
     }

@@ -7,7 +7,7 @@ import com.ventacontable.persona.puerto.repositorio.RepositorioPersona;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class RepositorioPersonaAdaptador<T> implements RepositorioPersona {
+public class RepositorioPersonaAdaptador implements RepositorioPersona {
 
 
     @SqlStatement(namespace = "persona", value = "registrar")
@@ -32,7 +32,7 @@ public class RepositorioPersonaAdaptador<T> implements RepositorioPersona {
     }
 
     @Override
-    public Object actualizar(Persona persona) {
+    public String actualizar(Persona persona) {
         this.customNamedParameterJdbcTemplate.actualizar(persona, sqlActualizar);
         return persona.getIdentificacion();
     }

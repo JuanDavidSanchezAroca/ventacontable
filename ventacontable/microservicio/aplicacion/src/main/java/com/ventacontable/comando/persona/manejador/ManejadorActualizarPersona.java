@@ -8,7 +8,7 @@ import com.ventacontable.persona.servicio.ActualizarPersonaServicio;
 import org.springframework.stereotype.Component;
 
 @Component
- public class ManejadorActualizarPersona implements ManejadorComandoRespuesta<ComandoPersona, Object> {
+ public class ManejadorActualizarPersona implements ManejadorComandoRespuesta<ComandoPersona, String> {
     private final ActualizarPersonaServicio actualizarPersonaServicio;
     private final PersonaFabrica personaFabrica;
 
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
         this.personaFabrica = personaFabrica;
     }
     @Override
-    public Object ejecutar(ComandoPersona comandoPersona) {
+    public String ejecutar(ComandoPersona comandoPersona) {
         Persona persona = this.personaFabrica.ejecutar(comandoPersona);
         return this.actualizarPersonaServicio.ejecutar(persona);
     }
