@@ -23,7 +23,7 @@ public class ComandoControladorPersona {
     }
 
     @PutMapping
-    public ComandoRespuesta<Object> actualizar(@RequestBody ComandoPersona comandoPersona) {
+    public ComandoRespuesta<String> actualizar(@RequestBody ComandoPersona comandoPersona) {
         return new ComandoRespuesta<>(this.manejadorActualizarPersona.ejecutar(comandoPersona));
     }
 }
