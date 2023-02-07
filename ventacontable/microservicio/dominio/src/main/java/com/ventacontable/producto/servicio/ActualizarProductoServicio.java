@@ -1,4 +1,4 @@
-package com.ventacontable.producto.servicio.producto;
+package com.ventacontable.producto.servicio;
 
 import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
 import com.ventacontable.dominio.excepcion.ExcepcionValorInvalido;
@@ -6,7 +6,7 @@ import com.ventacontable.producto.modelo.entidad.Producto;
 import com.ventacontable.producto.puerto.dao.DaoProducto;
 import com.ventacontable.producto.puerto.repositorio.RepositorioProducto;
 
-public class ServicioActualizarProducto {
+public class ActualizarProductoServicio {
 
     private static final String NO_EXISTE_PRODUCTO="El producto ingresado no existe";
     private static final String YA_EXISTE_NOMBRE_PRODUCTO="Ya existe el nombre del producto";
@@ -14,7 +14,7 @@ public class ServicioActualizarProducto {
     private final DaoProducto daoProducto;
     private final RepositorioProducto repositorioProducto;
 
-    public ServicioActualizarProducto(DaoProducto daoProducto,RepositorioProducto repositorioProducto){
+    public ActualizarProductoServicio(DaoProducto daoProducto, RepositorioProducto repositorioProducto){
         this.daoProducto=daoProducto;
         this.repositorioProducto = repositorioProducto;
     }
