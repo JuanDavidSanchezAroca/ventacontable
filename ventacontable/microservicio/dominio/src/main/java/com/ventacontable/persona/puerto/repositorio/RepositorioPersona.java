@@ -23,8 +23,7 @@ public interface RepositorioPersona {
          * Permite actualizar una persona
          *
          * @param persona
-         * @param idPersona
          */
-        int actualizar(Persona persona, Integer idPersona);
+        String actualizar(Persona persona);
 
 }

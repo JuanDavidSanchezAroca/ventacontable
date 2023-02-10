@@ -32,9 +32,9 @@ public class RepositorioPersonaAdaptador implements RepositorioPersona {
     }
 
     @Override
-    public int actualizar(Persona persona, Integer idPersona) {
-        this.customNamedParameterJdbcTemplate.actualizar(persona, sqlActualizar, idPersona);
-        return idPersona;
+    public String actualizar(Persona persona) {
+        this.customNamedParameterJdbcTemplate.actualizar(persona, sqlActualizar);
+        return persona.getIdentificacion();
     }
 }
 
