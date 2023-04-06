@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ventacontable-deployment
+  labels:
+   app: ventacontable-back
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ventacontable-back
+  template:
+    metadata: 
+      labels:
+        app: ventacontable-back
+    spec:
+      containers:
+      - name: ventacontable-back
+        image: registry.digitalocean.com/venta-contable/ventacontable:1.0.0
+        ports:
+          - name: http
+            containerPort: 8080 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+  labels:
+    app: ventacontable-back
+spec:
+  type: ClusterIP
+  selector:
+    app: ventacontable-back
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
