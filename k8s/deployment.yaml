@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ventacontable-back
-        image: registry.digitalocean.com/venta-contable/ventacontable:1.0.0
+        image: registry.digitalocean.com/venta-contable/ventacontable:1.1.0
         ports:
           - name: http
             containerPort: 8080 
