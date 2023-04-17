@@ -4,7 +4,12 @@ import com.ventacontable.ComandoRespuesta;
 import com.ventacontable.comando.categoria.ComandoCategoria;
 import com.ventacontable.comando.categoria.manejador.ManejadorActualizarCategoria;
 import com.ventacontable.comando.categoria.manejador.ManejadorCrearCategoria;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/categoria")
