@@ -27,13 +27,20 @@ public class AsociarCategoriaServicio {
     public void ejecutar(int idProducto, List<Integer> categorias){
         validarPreviaExistenciaProducto(idProducto);
         List<Integer> categoriasValidas = daoCategoria.existeIdCategoriaBatch(categorias);
+        validarExistenciaPreviaCategorias(categoriasValidas);
         validarCategoriasExistentes(categorias,categoriasValidas);
         this.repositorioCategoria.asociarCategoriaProducto(idProducto,categorias);
     }
 
     private void validarCategoriasExistentes(List<Integer> categorias,List<Integer> categoriasExistentes){
-        categoriasExistentes.removeAll(categorias);
-        if(categoriasExistentes.size()> 0){
+        categorias.removeAll(categoriasExistentes);
+        if(categorias.size()> 0){
+            throw new ExcepcionSinDatos(CATEGORIA_INVALIDA);
+        }
+    }
+
+    private void validarExistenciaPreviaCategorias(List<Integer> categoriasExistentes){
+        if(categoriasExistentes.size() == 0){
             throw new ExcepcionSinDatos(CATEGORIA_INVALIDA);
         }
     }
