@@ -29,7 +29,8 @@ public class AsociarCategoriaServicio {
         List<Integer> categoriasValidas = daoCategoria.existeIdCategoriaBatch(categorias);
         validarExistenciaPreviaCategorias(categoriasValidas);
         validarCategoriasExistentes(categorias,categoriasValidas);
-        this.repositorioCategoria.asociarCategoriaProducto(idProducto,categorias);
+
+        this.repositorioCategoria.asociarCategoriaProducto(idProducto,categoriasValidas);
     }
 
     private void validarCategoriasExistentes(List<Integer> categorias,List<Integer> categoriasExistentes){

@@ -34,6 +34,4 @@ public interface RepositorioCategoria {
      * @return
      */
     int asociarCategoriaProducto(Integer idProducto, List<Integer> categorias);
-
-
 }
