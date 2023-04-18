@@ -1,6 +1,6 @@
 package com.ventacontable.producto.categoria;
 
-import com.ventacontable.categoria.modelo.Categoria;
+import com.ventacontable.categoria.modelo.entidad.Categoria;
 import com.ventacontable.categoria.puerto.dao.DaoCategoria;
 import com.ventacontable.categoria.puerto.repositorio.RepositorioCategoria;
 import com.ventacontable.categoria.servicio.CrearCategoriaServicio;

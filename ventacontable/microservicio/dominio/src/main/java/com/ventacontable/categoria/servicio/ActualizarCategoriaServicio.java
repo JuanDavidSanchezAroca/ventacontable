@@ -2,7 +2,7 @@ package com.ventacontable.categoria.servicio;
 
 import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
 import com.ventacontable.dominio.excepcion.ExcepcionSinDatos;
-import com.ventacontable.categoria.modelo.Categoria;
+import com.ventacontable.categoria.modelo.entidad.Categoria;
 import com.ventacontable.categoria.puerto.dao.DaoCategoria;
 import com.ventacontable.categoria.puerto.repositorio.RepositorioCategoria;
 

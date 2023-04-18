@@ -1,5 +1,7 @@
 package com.ventacontable.categoria.puerto.dao;
 
+import com.ventacontable.categoria.modelo.dto.DtoCategoria;
+
 import java.util.List;
 
 public interface DaoCategoria {
@@ -28,4 +30,10 @@ public interface DaoCategoria {
     boolean existeIdCategoria(Integer idCategoria);
 
     List<Integer> existeIdCategoriaBatch(List<Integer> idCategoria);
+
+    /**
+     *
+     * @return lista de categorias
+     */
+    List<DtoCategoria> listarCategorias();
 }

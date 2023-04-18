@@ -1,9 +1,11 @@
 package com.ventacontable.adaptador.dao.categoria;
 
 import com.ventacontable.adaptador.dao.categoria.mapeo.MapeoCategoria;
+import com.ventacontable.categoria.modelo.dto.DtoCategoria;
 import com.ventacontable.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ventacontable.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ventacontable.categoria.puerto.dao.DaoCategoria;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;
 
@@ -27,6 +29,9 @@ public class DaoCategoriaAdaptador implements DaoCategoria {
 
     @SqlStatement(namespace = "categoria", value = "obtener_por_id")
     private static String sqlObtenerPorId;
+
+    @SqlStatement(namespace = "categoria", value = "listar_categorias")
+    private static String sqlListarCategorias;
 
     public DaoCategoriaAdaptador(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate){
         this.customNamedParameterJdbcTemplate=customNamedParameterJdbcTemplate;
@@ -65,5 +70,11 @@ public class DaoCategoriaAdaptador implements DaoCategoria {
         parameterSource.addValue(ID,categorias);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
                 .query(sqlObtenerPorId,parameterSource, new MapeoCategoria());
+    }
+
+    @Override
+    public List<DtoCategoria> listarCategorias() {
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
+                .query(sqlListarCategorias, new BeanPropertyRowMapper<>(DtoCategoria.class));
     }
 }
