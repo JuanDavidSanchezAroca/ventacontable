@@ -18,14 +18,12 @@ public class ComandoControladorCategoria {
     private final ManejadorCrearCategoria manejadorCrearCategoria;
     private final ManejadorActualizarCategoria manejadorActualizarCategoria;
 
-    private final ManejadorListarCategorias manejadorListarCategorias;
 
     public ComandoControladorCategoria(ManejadorCrearCategoria manejadorCrearCategoria,
                                        ManejadorActualizarCategoria manejadorActualizarCategoria,
                                        ManejadorListarCategorias manejadorListarCategorias) {
         this.manejadorCrearCategoria = manejadorCrearCategoria;
         this.manejadorActualizarCategoria = manejadorActualizarCategoria;
-        this.manejadorListarCategorias = manejadorListarCategorias;
     }
 
     @PostMapping
@@ -39,14 +37,7 @@ public class ComandoControladorCategoria {
         return new ComandoRespuesta<>(this.manejadorActualizarCategoria.ejecutar(comandoCategoria, id));
     }
 
-    @GetMapping
-    public ComandoRespuesta<List<DtoCategoria>> listarCategorias(){
-        return new ComandoRespuesta<>(this.manejadorListarCategorias.ejecutar());
-    }
-    @GetMapping("/hola")
-    public String hola(){
-        return new String("hol");
-    }
+
 }
 
 

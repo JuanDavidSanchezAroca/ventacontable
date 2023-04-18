@@ -14,8 +14,8 @@ spring:
    datasource:
       driver-class-name: org.postgresql.Driver
       type: com.zaxxer.hikari.HikariDataSource
-      jdbcUrl: jdbc:postgresql://dpg-cfghn41gp3jjsed80fr0-a.ohio-postgres.render.com:5432/ventacontable
-      username: ventacontable
-      password: GmGnW5blNA4YkGE4DgA52tLjigyc0s6R
+      jdbcUrl: jdbc:postgresql://venta-contable-do-user-7053223-0.b.db.ondigitalocean.com:25060/ventacontable
+      username: venta-contable
+      password: ventacontable
       hikari:
          poolName: pool

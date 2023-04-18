@@ -1,1 +1,1 @@
-SELECT * from CATEGORIA
+SELECT id, nombre, descripcion from CATEGORIA
