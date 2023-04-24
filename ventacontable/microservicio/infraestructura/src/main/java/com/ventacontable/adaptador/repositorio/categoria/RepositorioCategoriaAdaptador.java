@@ -3,7 +3,7 @@ package com.ventacontable.adaptador.repositorio.categoria;
 import com.ventacontable.categoria.puerto.repositorio.MapeoCategoriaProducto;
 import com.ventacontable.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ventacontable.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ventacontable.categoria.modelo.Categoria;
+import com.ventacontable.categoria.modelo.entidad.Categoria;
 import com.ventacontable.categoria.puerto.repositorio.RepositorioCategoria;
 import org.springframework.stereotype.Repository;
 

@@ -21,7 +21,7 @@ public class CrearProductoServicio {
     public long ejecutar(Producto producto){
         this.validarPreviaExistenciaNombre(producto.getNombre());
         long id = this.repositorioProducto.crear(producto);
-        asociarCategoriaServicio.ejecutar((int)id,producto.getCategorias());
+        asociarCategoriaServicio.ejecutar((int)id, producto.getCategorias());
         return id;
     }
 

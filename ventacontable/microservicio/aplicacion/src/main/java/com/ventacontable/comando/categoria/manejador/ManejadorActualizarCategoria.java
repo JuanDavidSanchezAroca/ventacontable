@@ -2,7 +2,7 @@ package com.ventacontable.comando.categoria.manejador;
 
 import com.ventacontable.comando.categoria.ComandoCategoria;
 import com.ventacontable.comando.categoria.fabrica.CategoriaFabrica;
-import com.ventacontable.categoria.modelo.Categoria;
+import com.ventacontable.categoria.modelo.entidad.Categoria;
 import com.ventacontable.categoria.servicio.ActualizarCategoriaServicio;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

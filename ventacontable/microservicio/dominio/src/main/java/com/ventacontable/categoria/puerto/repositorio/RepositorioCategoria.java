@@ -1,6 +1,6 @@
 package com.ventacontable.categoria.puerto.repositorio;
 
-import com.ventacontable.categoria.modelo.Categoria;
+import com.ventacontable.categoria.modelo.entidad.Categoria;
 
 import java.util.List;
 
