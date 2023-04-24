@@ -1,0 +1,29 @@
+.title-login {
+  align-self: center;
+  margin: 20px 10px 20px 10px;
+}
+
+.example-header-image {
+  background-image: url('../../../assets/img/login.png');
+  background-size: cover;
+  align-self: center;
+  height: 100px;
+  width: 100px;
+}
+
+.image-moda {
+  background-image: url('../../../assets/img/moda.jpg');
+  height: 500px;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.button-remember {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
