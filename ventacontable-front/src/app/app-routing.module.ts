@@ -6,6 +6,11 @@ const routes: Routes = [
     path: 'login' ,
     loadChildren: () =>  import('./feature/login/login.module').then((m) => m.LoginModule)
   },
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./feature/home/home.module').then((m) => m.HomeModule),
+  },
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];

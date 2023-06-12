@@ -1,0 +1,42 @@
+@import "../../../../../scss/variables";
+  
+  .titulo{
+    font-family: $fontSecond-B;
+    font-size: 20px;
+  }
+
+  .titulo-principal{
+    text-align: center;
+    font-family: $fontSecond-B;
+    font-size: 20px;
+  }
+
+  .subtitulo{
+    font-family: $fontSecond-B;
+    font-size: 18px;
+  }
+
+  .parrafo{
+    font-family: $fontSecond-B;
+    font-size: 16px;
+  }
+
+  .example-card {
+    max-width: 400px;
+    height: 500px;
+  }
+  
+  .example-header-image {
+    background-image: url('../../../../../assets/img/sale.png');
+    background-size: cover;
+  }
+
+  .contabilidad-image{
+    background-image: url('../../../../../assets/img/contabilidad.png');
+    background-size: cover;
+  }
+
+  .usuario-image{
+    background-image: url('../../../../../assets/img/user.png');
+    background-size: cover;
+  }

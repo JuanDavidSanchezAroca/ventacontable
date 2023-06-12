@@ -1,7 +1,5 @@
 package com.ventacontable.persona.modelo.entidad;
 
-import com.ventacontable.usuario.modelo.Rol;
-import com.ventacontable.usuario.modelo.Usuario;
 import lombok.Getter;
 
 import java.time.LocalDate;
@@ -32,7 +30,9 @@ public class Persona {
     private Integer usuario;
     private Integer rol;
 
-    public Persona(String identificacion, String nombre, String apellido, String tipoDocumento, String telefono, String genero, String direccion, LocalDate fechaNacimiento,
+    public Persona(String identificacion, String nombre, String apellido,
+                   String tipoDocumento, String telefono,
+                   String genero, String direccion, LocalDate fechaNacimiento,
                    Integer rol, Integer usuario) {
         validarObligatorio(identificacion, IDENTIFICACION_OBLIGATORIA);
         validarObligatorio(nombre, NOMBRE_OBLIGATORIO);

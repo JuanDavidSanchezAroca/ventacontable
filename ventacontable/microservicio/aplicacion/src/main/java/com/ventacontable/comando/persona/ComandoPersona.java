@@ -1,5 +1,6 @@
 package com.ventacontable.comando.persona;
 
+import com.ventacontable.comando.usuario.usuario.ComandoUsuario;
 import com.ventacontable.persona.modelo.entidad.Genero;
 import com.ventacontable.persona.modelo.entidad.TipoDocumento;
 import com.ventacontable.usuario.modelo.Rol;
@@ -25,7 +26,6 @@ public class ComandoPersona {
     private String telefono;
     private String genero;
     private String direccion;
-    private Integer usuario;
+    private ComandoUsuario usuario;
     private Integer rol;
-
 }

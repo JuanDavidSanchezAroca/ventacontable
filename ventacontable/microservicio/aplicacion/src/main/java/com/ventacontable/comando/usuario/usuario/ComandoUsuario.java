@@ -10,6 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ComandoUsuario {
-    String usuario;
+    int id;
+    String correo;
     String password;
 }

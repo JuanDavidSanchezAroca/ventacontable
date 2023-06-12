@@ -8,7 +8,7 @@ import com.ventacontable.usuario.servicio.usuario.CrearUsuarioServicio;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ManejadorCrearUsuario implements ManejadorComandoRespuesta<ComandoUsuario, Integer> {
+public class  ManejadorCrearUsuario implements ManejadorComandoRespuesta<ComandoUsuario, Integer> {
     private final CrearUsuarioServicio crearUsuarioServicio;
     private final UsuarioFabrica usuarioFabrica;
 

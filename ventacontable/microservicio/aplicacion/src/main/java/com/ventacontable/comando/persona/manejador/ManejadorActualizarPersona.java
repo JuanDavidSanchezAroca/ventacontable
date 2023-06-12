@@ -12,13 +12,14 @@ import org.springframework.stereotype.Component;
     private final ActualizarPersonaServicio actualizarPersonaServicio;
     private final PersonaFabrica personaFabrica;
 
-    public ManejadorActualizarPersona(ActualizarPersonaServicio actualizarPersonaServicio, PersonaFabrica personaFabrica){
+    public ManejadorActualizarPersona(ActualizarPersonaServicio actualizarPersonaServicio,
+                                      PersonaFabrica personaFabrica){
         this.actualizarPersonaServicio = actualizarPersonaServicio;
         this.personaFabrica = personaFabrica;
     }
     @Override
     public String ejecutar(ComandoPersona comandoPersona) {
-        Persona persona = this.personaFabrica.ejecutar(comandoPersona);
+        Persona persona = this.personaFabrica.ejecutar(comandoPersona,0);
         return this.actualizarPersonaServicio.ejecutar(persona);
     }
 }
