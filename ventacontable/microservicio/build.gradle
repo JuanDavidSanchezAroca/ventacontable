@@ -20,6 +20,7 @@ allprojects {
 	project.ext.springbootweb = ["org.springframework.boot:spring-boot-starter-web:${springBootVersion}"]
 	project.ext.springdevtools = ["org.springframework.boot:spring-boot-devtools:${springBootVersion}"]
 	project.ext.springbootundertow = ["org.springframework.boot:spring-boot-starter-undertow:${springBootVersion}"]
+	project.ext.mail = ["org.springframework.boot:spring-boot-starter-mail:${springBootVersion}"]
 	project.ext.springbootjasypt = ['com.github.ulisesbocchio:jasypt-spring-boot-starter:2.1.1']
 	
 	project.ext.springtxt = [
@@ -75,6 +76,7 @@ dependencies {
 	
 	implementation project.ext.springbootundertow
 	implementation project.ext.flyway
+	implementation project.ext.mail
 
 	implementation project(':infraestructura')
 

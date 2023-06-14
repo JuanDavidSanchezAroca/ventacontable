@@ -19,3 +19,18 @@ spring:
       password: 123456789
       hikari:
          poolName: pool
+
+   mail:
+      host: smtp.gmail.com
+      port: 587
+      username: juan.david748@gmail.com
+      password: eiqesitvdkdpctzu
+      properties:
+         mail:
+            smtp:
+               auth: true
+               starttls:
+                  enable: true
+
+   main:
+      allow-bean-definition-overriding: true
