@@ -21,6 +21,8 @@ dependencies {
 	implementation project.ext.apachecommons
 	implementation project.ext.swagger
 	implementation project.ext.actuator
+	implementation project.ext.mail
+	implementation project.ext.thymeleaf
 	
 	implementation project(':comun:comun-dominio')
 }
