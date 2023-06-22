@@ -31,7 +31,7 @@ public class ComandoControladorUsuario {
         return new ComandoRespuesta<>(this.manejadorActualizarUsuario.ejecutar(comandoUsuario, id));
     }
 
-    @GetMapping()
+    @PostMapping("/validar")
     public ComandoRespuesta<Boolean> validarUsuarioPassword(@RequestBody ComandoUsuario comandoUsuario) {
         return new ComandoRespuesta<>(this.manejadorValidarUsuarioPassword.ejecutar(comandoUsuario));
     }
