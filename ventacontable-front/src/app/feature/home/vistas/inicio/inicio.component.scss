@@ -1,5 +1,8 @@
 @import "../../../../../scss/variables";
   
+  .row {
+    margin: 0;
+  }
   .titulo{
     font-family: $fontSecond-B;
     font-size: 20px;
@@ -24,6 +27,7 @@
   .example-card {
     max-width: 400px;
     height: 500px;
+    margin-bottom: 30px;
   }
   
   .example-header-image {

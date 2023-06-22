@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row login">
+    <div class="col-md-12">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <mat-card class="card-form-login">
+            <div class="row title-login">
+              <mat-card-title>LOGIN</mat-card-title>
+            </div>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-content>
+              <form [formGroup]="loginForm" #ngForm="ngForm" autocomplete="off" (ngSubmit)="onSubmit()">
+                <div class="row justify-content-center input">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input class="input-text"
+                          type="text" 
+                          placeholder="Ingrese el correo" 
+                          matInput 
+                          id="username" 
+                          formControlName="username" />
+                          <mat-error class="error" 
+                                      *ngIf="getControl('username')?.invalid && 
+                                        getControl('username')?.touched ||
+                                         ngForm.submitted">
+                            * Se debe ingresar el correo
+                           </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="row justify-content-center input">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input class="input-text"
+                          type="password" 
+                          placeholder="Ingrese la contraseña" 
+                          matInput
+                          id="password" 
+                          formControlName="password" />
+                          <mat-error class="error" 
+                                      *ngIf="getControl('password')?.invalid && 
+                                      getControl('password')?.touched || 
+                                      ngForm.submitted">
+                           * Se debe ingresar la contraseña
+                          </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="button">
+                  <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
+                </div>
+                <div class="row button-remember">
+                  <button mat-button color="primary">Remember password?</button>
+                </div>
+              </form>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

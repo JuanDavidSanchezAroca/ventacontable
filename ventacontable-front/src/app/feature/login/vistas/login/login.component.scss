@@ -1,6 +1,22 @@
+@import "../../../../../scss/variables";
+
+.container{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 .button {
   display: flex;
   justify-content: center;
+}
+
+.error{
+  font-size: 12px;
+  font-family: $fontSecond-B;
+}
+
+.input {
+  margin-bottom: 12px;
 }
 
 .button-remember {
@@ -11,7 +27,7 @@
 
 
 .example-header-image {
-  background-image: url('../../../assets/img/login.png');
+  background-image: url('../../../../../assets/img/login.png');
   background-size: cover;
   align-self: center;
   height: 100px;
@@ -21,6 +37,6 @@
 .title-login {
   align-self: center;
   margin: 20px 10px 20px 10px;
-  font-family: fantasy;
+  font-family: $fontSecond-B;
   font-size: 20px;
 }

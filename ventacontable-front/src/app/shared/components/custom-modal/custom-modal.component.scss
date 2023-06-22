@@ -1,0 +1,52 @@
+@import "../../../../scss/variables";
+
+
+.custom-modal {
+    position: relative;
+    min-width: 200px;
+    margin: 5px 10px 5px 10px;
+
+    .modal-header {
+        width: 100%;
+        text-align: end;
+
+        button {
+            background: none;
+            border: none;
+            outline: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .info-modal {
+        padding: 20px 0;
+        text-align: center;
+
+        mat-icon {
+            height: 50px;
+            width: 50px;
+            font-size: 50px;
+        }
+    }
+
+    p {
+        max-width: 320px;
+        font-family: $fontSecond-B;
+    }
+
+    .initial-width {
+        p {
+            max-width: initial;
+        }
+    }
+    .icon-error {
+        color: red;
+    }
+
+    .cerrar {
+        transform: scale(1.5);
+        margin: 10px 10px 0 0;
+    }
+}
+
