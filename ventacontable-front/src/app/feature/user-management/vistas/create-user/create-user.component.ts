@@ -10,19 +10,21 @@ import { TypeDoc } from '../../shared/interfaces/type-doc';
   templateUrl: './create-user.component.html',
   styleUrls: ['./create-user.component.scss']
 })
-export class CreateUserComponent  implements OnInit{
-  
+export class CreateUserComponent implements OnInit {
+
+
+
   formulario!: FormGroup;
   typesDocuments: TypeDoc[] = [
-    { value: "CC", viewValue: "Cédula de Ciudadanía (CC)"},
-    { value: "TI", viewValue: "Tarjeta de Identidad (TI)"},
-    { value: "CE", viewValue: "Cédula de Extranjería (CE)"},
-    { value: "PASS", viewValue: "Pasaporte (PASS)"}
+    { value: "CC", viewValue: "Cédula de Ciudadanía (CC)" },
+    { value: "TI", viewValue: "Tarjeta de Identidad (TI)" },
+    { value: "CE", viewValue: "Cédula de Extranjería (CE)" },
+    { value: "PASS", viewValue: "Pasaporte (PASS)" }
   ]
 
   genderType: GenderType[] = [
-    { value: "MASCULINO", viewValue:"Masculino"},
-    { value: "FEMENINO", viewValue:"Femenino"}
+    { value: "MASCULINO", viewValue: "Masculino" },
+    { value: "FEMENINO", viewValue: "Femenino" }
   ]
 
   constructor(private formBuilder: FormBuilder) { }
@@ -35,8 +37,17 @@ export class CreateUserComponent  implements OnInit{
     this.formulario = this.formBuilder.group({
       identificacion: ['', Validators.required],
       nombre: ['', Validators.required],
-      apellido: ['', Validators.required]
+      apellido: ['', Validators.required],
+      tipoDocumento: ['', Validators.required],
+      fechaNacimiento: ['', Validators.required],
+      genero: ['', Validators.required],
+      telefono: ['', Validators.required],
+      direccion: ['', Validators.required],
+      correo: ['', [Validators.required, Validators.email]]
     });
+  }
+  getControl(name: string) {
+    return this.formulario.get(name);
   }
 
   submitFormulario(): void {
