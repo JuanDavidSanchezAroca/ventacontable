@@ -1,0 +1,21 @@
+@import "../../../../../scss/variables";
+
+.titulo-crear-usuario {
+    margin: 20px 10px 20px 10px;
+    align-self: center;
+    font-size: 20px;
+    font-family: $fontPrimary;
+}
+
+.input {
+    margin-bottom: 12px;
+}
+
+.mat-form-field {
+    margin: 10px 10px 10px 10px;
+    width: 250px;
+}
+
+.border-card {
+    border: 2px solid #9223e0
+}

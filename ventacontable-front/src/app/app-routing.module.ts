@@ -10,8 +10,12 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('./feature/home/home.module').then((m) => m.HomeModule),
-    canActivate: [SecurityGuard]
+      import('./feature/home/home.module').then((m) => m.HomeModule)
+  },
+  {
+    path: 'user-management',
+    loadChildren: () =>
+      import('./feature/user-management/user-management.module').then((m) => m.UserManagementModule)
   },
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: './src/app', loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule) },
