@@ -102,11 +102,10 @@
               <mat-form-field class="mat-form-field" appearance="outline">
                 <mat-label>Correo</mat-label>
                 <input matInput formControlName="correo" placeholder="Ingrese su correo">
-                <mat-error class="error" *ngIf=" getControl('correo')?.touched ||
-                                         ngForm.submitted">
+                <mat-error class="error" *ngIf=" getControl('correo')?.touched && !getControl('correo')?.errors?.['email']">
                   * Debe ingresar su correo
                 </mat-error>
-                <mat-error class="error" *ngIf="formulario.controls['correo'].hasError('invalid')">
+                <mat-error class="error" *ngIf=" getControl('correo')?.errors?.['email']">
                   * Debe ingresar un correo valido
                 </mat-error>
               </mat-form-field>
