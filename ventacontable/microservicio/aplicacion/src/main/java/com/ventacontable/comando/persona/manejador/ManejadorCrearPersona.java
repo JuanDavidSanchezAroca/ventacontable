@@ -7,7 +7,7 @@ import com.ventacontable.manejador.ManejadorComandoRespuesta;
 import com.ventacontable.notificacion.servicio.NotificarCrearUsuarioServicio;
 import com.ventacontable.persona.modelo.entidad.Persona;
 import com.ventacontable.persona.servicio.CrearPersonaServicio;
-import com.ventacontable.usuario.modelo.Usuario;
+import com.ventacontable.usuario.modelo.entidad.Usuario;
 import com.ventacontable.usuario.servicio.usuario.CrearUsuarioServicio;
 import org.springframework.stereotype.Component;
 

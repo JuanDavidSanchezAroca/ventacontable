@@ -2,6 +2,7 @@ import { Component, Inject, NgModule } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ModalType } from '../../enums/modal-type';
 import { CustomModal } from '../../models/CustomModal';
+import { MODAL_MESSAGE } from './constants';
 
 
 @Component({
@@ -10,6 +11,8 @@ import { CustomModal } from '../../models/CustomModal';
   styleUrls: ['./custom-modal.component.scss']
 })
 export class CustomModalComponent {
+  
+  modalMessage = MODAL_MESSAGE;
   customModalType = ModalType;
   dataModal: CustomModal;
 

@@ -2,12 +2,17 @@ package com.ventacontable.notificacion.servicio;
 
 import com.ventacontable.dominio.plantillas.PlantillaHtmlCorreo;
 import com.ventacontable.puerto.CorreoServicio;
-import com.ventacontable.usuario.modelo.Usuario;
+import com.ventacontable.usuario.modelo.entidad.Usuario;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
+
+@Service
+@EnableAsync
 public class NotificarCrearUsuarioServicio {
     private static final String PASSWORD = "password";
     private static final String ENCABEZADO_CREACION = "Se acaba de generar tu usuario para ventacontable";
@@ -18,6 +23,7 @@ public class NotificarCrearUsuarioServicio {
         this.correoServicio = correoServicio;
     }
 
+    @Async
     public void ejecutar(Usuario usuario){
         Map<String, Object> valores = new HashMap<>();
         valores.put(PASSWORD,usuario.getPassword());

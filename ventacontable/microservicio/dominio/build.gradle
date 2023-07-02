@@ -21,6 +21,7 @@ dependencies {
 
 	implementation project.ext.lombok
 	annotationProcessor project.ext.lombok
+	implementation project.ext.springbootweb
 }
 
 jacocoTestReport {

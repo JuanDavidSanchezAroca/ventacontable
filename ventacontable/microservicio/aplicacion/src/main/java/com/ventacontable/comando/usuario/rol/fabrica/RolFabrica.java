@@ -1,7 +1,7 @@
 package com.ventacontable.comando.usuario.rol.fabrica;
 
 import com.ventacontable.comando.usuario.rol.ComandoRol;
-import com.ventacontable.usuario.modelo.Rol;
+import com.ventacontable.usuario.modelo.entidad.Rol;
 import org.springframework.stereotype.Component;
 
 @Component

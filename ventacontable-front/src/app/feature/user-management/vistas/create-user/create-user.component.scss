@@ -7,6 +7,13 @@
     font-family: $fontPrimary;
 }
 
+.subtitulo-crear-usuario{
+    margin: 15px 15px 15px 15px;
+    align-self: center;
+    font-size: 18px;
+    font-family: $fontPrimary;
+}
+
 .input {
     margin-bottom: 12px;
 }
@@ -23,4 +30,8 @@
 .error {
     font-size: 12px;
     font-family: $fontSecond-B;
+}
+
+.button {
+    font-size: 20px;
 }

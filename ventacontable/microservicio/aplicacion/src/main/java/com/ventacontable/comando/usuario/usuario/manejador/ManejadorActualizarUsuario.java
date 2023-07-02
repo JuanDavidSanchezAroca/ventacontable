@@ -2,8 +2,7 @@ package com.ventacontable.comando.usuario.usuario.manejador;
 
 import com.ventacontable.comando.usuario.usuario.ComandoUsuario;
 import com.ventacontable.comando.usuario.usuario.fabrica.UsuarioFabrica;
-import com.ventacontable.manejador.ManejadorComandoRespuesta;
-import com.ventacontable.usuario.modelo.Usuario;
+import com.ventacontable.usuario.modelo.entidad.Usuario;
 import com.ventacontable.usuario.servicio.usuario.ActualizarUsuarioServicio;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

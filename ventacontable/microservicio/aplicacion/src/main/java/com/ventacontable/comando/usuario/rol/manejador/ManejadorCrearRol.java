@@ -3,7 +3,7 @@ package com.ventacontable.comando.usuario.rol.manejador;
 import com.ventacontable.comando.usuario.rol.ComandoRol;
 import com.ventacontable.comando.usuario.rol.fabrica.RolFabrica;
 import com.ventacontable.manejador.ManejadorComandoRespuesta;
-import com.ventacontable.usuario.modelo.Rol;
+import com.ventacontable.usuario.modelo.entidad.Rol;
 import com.ventacontable.usuario.servicio.rol.CrearRolServicio;
 import org.springframework.stereotype.Component;
 

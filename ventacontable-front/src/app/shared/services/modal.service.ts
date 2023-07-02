@@ -9,6 +9,12 @@ export class ModalService {
 
     constructor(private dialog: MatDialog) { }
 
+    private modalSuccess: CustomModal = {
+        type: ModalType.SUCCESS,
+        panelClass: 'bg-success',
+        cssClass: 'bg-success',
+    };
+
     private modalError: CustomModal = {
         type: ModalType.ERROR,
         panelClass: ['bg-error'],
@@ -39,6 +45,14 @@ export class ModalService {
     }
 
     private obtenerDefaultConfig(type: ModalType): CustomModal {
-        return this.modalError;
+        switch (type) {
+            case ModalType.SUCCESS:
+                return this.modalSuccess;
+            case ModalType.ERROR:
+                return this.modalError;
+            default:
+                return this.modalSuccess;
+        }
+
     }
 }

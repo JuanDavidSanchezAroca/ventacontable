@@ -2,7 +2,7 @@ package com.ventacontable.comando.usuario.permiso.manejador;
 
 import com.ventacontable.comando.usuario.permiso.ComandoPermiso;
 import com.ventacontable.comando.usuario.permiso.fabrica.PermisoFabrica;
-import com.ventacontable.usuario.modelo.Permiso;
+import com.ventacontable.usuario.modelo.entidad.Permiso;
 import com.ventacontable.usuario.servicio.permiso.ActualizarPermisoServicio;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

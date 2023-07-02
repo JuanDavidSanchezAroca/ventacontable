@@ -8,15 +8,14 @@ export interface Options {
   params?: HttpParams;
 }
 
-@Injectable({
-  providedIn: 'root',
-})
 export class RestService {
-  constructor(private http: HttpClient) {}
+
+
+  constructor(protected http: HttpClient) { }
 
   protected createDefaultOptions(): Options {
     return {
-      headers: new HttpHeaders({'Content-Type': 'application/json'})
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
   }
 
@@ -34,21 +33,22 @@ export class RestService {
     return opts || defaultOpts;
   }
 
-  doGet<T>(serviceUrl: string, opts?: Options): Observable<T> {
+  protected doGet<T>(serviceUrl: string, opts?: Options): Observable<T> {
     const ropts = this.createOptions(opts);
-    return this.http.get(serviceUrl, ropts).pipe(
+    return this.http.get<T>(serviceUrl, ropts).pipe(
       map(response => response as T)
     );
   }
 
-  doPost<T, R>(serviceUrl: string, body: T, opts?: Options): Observable<R> {
+  protected doPost<T, R>(serviceUrl: string, body: T, opts?: Options): Observable<R> {
     const ropts = this.createOptions(opts);
+
     return this.http.post(serviceUrl, body, ropts).pipe(
       map(response => response as R)
     );
   }
 
-  doGetParameters<T>(serviceUrl: string, parametros: HttpParams, opts?: Options): Observable<T> {
+  protected doGetParameters<T>(serviceUrl: string, parametros: HttpParams, opts?: Options): Observable<T> {
     const ropts = this.createOptions(opts);
     const options = parametros !== null ? {
       headers: ropts.headers,

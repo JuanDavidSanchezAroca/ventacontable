@@ -1,10 +1,6 @@
 package com.ventacontable.comando.persona;
 
 import com.ventacontable.comando.usuario.usuario.ComandoUsuario;
-import com.ventacontable.persona.modelo.entidad.Genero;
-import com.ventacontable.persona.modelo.entidad.TipoDocumento;
-import com.ventacontable.usuario.modelo.Rol;
-import com.ventacontable.usuario.modelo.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

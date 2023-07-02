@@ -1,7 +1,7 @@
 package com.ventacontable.comando.usuario.permiso.fabrica;
 
 import com.ventacontable.comando.usuario.permiso.ComandoPermiso;
-import com.ventacontable.usuario.modelo.Permiso;
+import com.ventacontable.usuario.modelo.entidad.Permiso;
 import org.springframework.stereotype.Component;
 
 @Component

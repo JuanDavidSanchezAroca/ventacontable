@@ -1,6 +1,6 @@
 package com.ventacontable.usuario.puerto.repositorio;
 
-import com.ventacontable.usuario.modelo.Rol;
+import com.ventacontable.usuario.modelo.entidad.Rol;
 
 public interface RepositorioRol {
 

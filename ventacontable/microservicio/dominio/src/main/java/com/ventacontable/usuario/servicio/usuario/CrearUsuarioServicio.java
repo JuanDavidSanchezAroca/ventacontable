@@ -1,12 +1,8 @@
 package com.ventacontable.usuario.servicio.usuario;
 
 import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
-import com.ventacontable.puerto.CorreoServicio;
-import com.ventacontable.usuario.modelo.Permiso;
-import com.ventacontable.usuario.modelo.Usuario;
-import com.ventacontable.usuario.puerto.dao.DaoPermiso;
+import com.ventacontable.usuario.modelo.entidad.Usuario;
 import com.ventacontable.usuario.puerto.dao.DaoUsuario;
-import com.ventacontable.usuario.puerto.repositorio.RepositorioPermiso;
 import com.ventacontable.usuario.puerto.repositorio.RepositorioUsuario;
 
 public class CrearUsuarioServicio {

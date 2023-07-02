@@ -1,6 +1,6 @@
 package com.ventacontable.usuario.builder;
 
-import com.ventacontable.usuario.modelo.Permiso;
+import com.ventacontable.usuario.modelo.entidad.Permiso;
 
 public class PermisoBuilder {
     private Integer id;

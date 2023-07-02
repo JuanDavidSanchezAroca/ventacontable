@@ -1,7 +1,7 @@
 package com.ventacontable.comando.usuario.usuario.fabrica;
 
 import com.ventacontable.comando.usuario.usuario.ComandoUsuario;
-import com.ventacontable.usuario.modelo.Usuario;
+import com.ventacontable.usuario.modelo.entidad.Usuario;
 import org.springframework.stereotype.Component;
 
 import java.security.SecureRandom;

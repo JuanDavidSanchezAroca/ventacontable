@@ -1,4 +1,4 @@
-package com.ventacontable.usuario.modelo;
+package com.ventacontable.usuario.modelo.entidad;
 
 import lombok.Getter;
 import static com.ventacontable.dominio.ValidadorArgumento.validarObligatorio;

@@ -10,6 +10,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
+import { ModalService } from 'src/app/shared/services/modal.service';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 
@@ -28,7 +31,12 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatDividerModule
+  ],
+  providers:[
+    ModalService
   ]
 })
 export class UserManagementModule { }

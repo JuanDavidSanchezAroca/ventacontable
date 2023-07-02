@@ -1,7 +1,7 @@
 package com.ventacontable.usuario.servicio.permiso;
 
 import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
-import com.ventacontable.usuario.modelo.Permiso;
+import com.ventacontable.usuario.modelo.entidad.Permiso;
 import com.ventacontable.usuario.puerto.dao.DaoPermiso;
 import com.ventacontable.usuario.puerto.repositorio.RepositorioPermiso;
 

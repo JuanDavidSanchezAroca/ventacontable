@@ -2,7 +2,7 @@ package com.ventacontable.adaptador.repositorio.usuario;
 
 import com.ventacontable.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ventacontable.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ventacontable.usuario.modelo.Rol;
+import com.ventacontable.usuario.modelo.entidad.Rol;
 import com.ventacontable.usuario.puerto.repositorio.RepositorioRol;
 import org.springframework.stereotype.Repository;
 

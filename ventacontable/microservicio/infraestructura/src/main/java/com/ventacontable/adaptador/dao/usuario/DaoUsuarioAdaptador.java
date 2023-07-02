@@ -2,8 +2,7 @@ package com.ventacontable.adaptador.dao.usuario;
 
 import com.ventacontable.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ventacontable.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ventacontable.usuario.modelo.Usuario;
-import com.ventacontable.usuario.puerto.dao.DaoPermiso;
+import com.ventacontable.usuario.modelo.entidad.Usuario;
 import com.ventacontable.usuario.puerto.dao.DaoUsuario;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;

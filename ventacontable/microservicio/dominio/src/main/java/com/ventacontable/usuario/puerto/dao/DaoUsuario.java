@@ -1,6 +1,6 @@
 package com.ventacontable.usuario.puerto.dao;
 
-import com.ventacontable.usuario.modelo.Usuario;
+import com.ventacontable.usuario.modelo.entidad.Usuario;
 
 public interface DaoUsuario {
 

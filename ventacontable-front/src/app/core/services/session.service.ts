@@ -1,3 +1,4 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { map, Observable } from "rxjs";
 import { Login } from "../models/interface/login";
@@ -6,12 +7,13 @@ import { RestService } from "./rest.service";
 @Injectable({
     providedIn: 'root',
 })
-export class SesionService {
+export class SesionService extends RestService {
 
     public tieneSesion: boolean = false;
 
     constructor(
-        private restService: RestService) {
+        protected override http: HttpClient) {
+            super(http);
     }
 
     get isLoggedIn(): boolean {
@@ -19,7 +21,7 @@ export class SesionService {
     }
 
     iniciarSesion(body: Login): Observable<any> {
-        return this.restService.doPost("/api/ventacontable/usuario/validar", body)
+        return this.doPost("/api/ventacontable/usuario/validar", body)
             .pipe(
                 map((response: any) => {
                     this.tieneSesion = response.valor;

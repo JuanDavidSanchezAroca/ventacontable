@@ -1,7 +1,7 @@
 package com.ventacontable.usuario.servicio.rol;
 
 import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
-import com.ventacontable.usuario.modelo.Rol;
+import com.ventacontable.usuario.modelo.entidad.Rol;
 import com.ventacontable.usuario.puerto.dao.DaoRol;
 import com.ventacontable.usuario.puerto.repositorio.RepositorioRol;
 

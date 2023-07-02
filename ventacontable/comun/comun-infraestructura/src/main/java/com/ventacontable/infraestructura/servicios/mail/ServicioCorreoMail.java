@@ -22,6 +22,7 @@ public class ServicioCorreoMail implements CorreoServicio {
     public JavaMailSender enviar;
     @Autowired
     public  PlantillaCorreo plantillaCorreo;
+
     @Override
     public String enviarCorreo(String from, String text, String destino) {
         try {
@@ -36,6 +37,7 @@ public class ServicioCorreoMail implements CorreoServicio {
         }
         return ERROR_ENVIAR_CORREO;
     }
+
 
     @Override
     public String enviarCorreoHtml(String from, Map<String,

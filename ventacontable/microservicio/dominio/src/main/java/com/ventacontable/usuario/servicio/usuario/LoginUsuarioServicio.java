@@ -1,7 +1,7 @@
 package com.ventacontable.usuario.servicio.usuario;
 
 import com.ventacontable.dominio.excepcion.ExcepcionSinDatos;
-import com.ventacontable.usuario.modelo.Usuario;
+import com.ventacontable.usuario.modelo.entidad.Usuario;
 import com.ventacontable.usuario.puerto.dao.DaoUsuario;
 import lombok.AllArgsConstructor;
 

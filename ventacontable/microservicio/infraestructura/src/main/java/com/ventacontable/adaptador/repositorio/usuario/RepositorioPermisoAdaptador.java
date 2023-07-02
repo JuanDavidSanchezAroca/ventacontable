@@ -2,7 +2,7 @@ package com.ventacontable.adaptador.repositorio.usuario;
 
 import com.ventacontable.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ventacontable.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ventacontable.usuario.modelo.Permiso;
+import com.ventacontable.usuario.modelo.entidad.Permiso;
 import com.ventacontable.usuario.puerto.repositorio.RepositorioPermiso;
 import org.springframework.stereotype.Repository;
 

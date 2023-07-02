@@ -1,4 +1,4 @@
-package com.ventacontable.usuario.modelo;
+package com.ventacontable.usuario.modelo.entidad;
 
 import static com.ventacontable.dominio.ValidadorArgumento.validarRegex;
 import static com.ventacontable.dominio.ValidadorArgumento.validarLongitudMinima;

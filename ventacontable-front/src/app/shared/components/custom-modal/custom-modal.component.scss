@@ -1,6 +1,16 @@
 @import "../../../../scss/variables";
 
 
+.img-success {
+    height: 71px;
+    margin: 0 auto 34px;
+    width: 71px;
+  
+    &::before{
+      content: url("../../../../assets/img/icono-check.svg");
+    }
+}
+
 .custom-modal {
     position: relative;
     min-width: 200px;

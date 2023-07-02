@@ -5,7 +5,7 @@ import com.ventacontable.dominio.excepcion.ExcepcionDuplicidad;
 import com.ventacontable.dominio.excepcion.ExcepcionValorInvalido;
 import com.ventacontable.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ventacontable.usuario.builder.PermisoBuilder;
-import com.ventacontable.usuario.modelo.Permiso;
+import com.ventacontable.usuario.modelo.entidad.Permiso;
 import com.ventacontable.usuario.puerto.dao.DaoPermiso;
 import com.ventacontable.usuario.puerto.repositorio.RepositorioPermiso;
 import com.ventacontable.usuario.servicio.permiso.CrearPermisoServicio;
