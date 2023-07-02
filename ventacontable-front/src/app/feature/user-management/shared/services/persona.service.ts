@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { catchError, map, Observable, throwError } from "rxjs";
+import { catchError } from "rxjs";
 import { RestService } from "src/app/core/services/rest.service";
 import { Persona } from "../interfaces/user";
 

@@ -1,10 +1,10 @@
 @import "../node_modules/@angular/material/theming";
-@import './assets/theme/palettes/purple-palette.scss';
+@import './assets/theme/palettes/brown-palette.scss';
 @import './assets/theme/palettes/cian-palette.scss';
 @import './assets/theme/palettes/red-palette.scss';
 @include mat-core();
 
-$customPrimary: mat-palette($mat-purple);
+$customPrimary: mat-palette($mat-brown);
 $customAccent: mat-palette($mat-cian);
 $customWarn: mat-palette($mat-red);
 $customTheme: mat-light-theme($customPrimary,

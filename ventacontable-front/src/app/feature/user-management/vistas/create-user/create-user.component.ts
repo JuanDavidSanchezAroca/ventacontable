@@ -100,7 +100,7 @@ export class CreateUserComponent implements OnInit {
           ['Usuario registrado',]);
         this.router.navigate(['/home']);
       }).catch((error) => {
-        this.modalService.abrirModal(ModalType.WARNING,
+        this.modalService.abrirModal(ModalType.ERROR,
           [
             'Error en la creacion del usuario\n',
           ],

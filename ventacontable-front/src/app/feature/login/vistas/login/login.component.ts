@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/home']);
         },
         error: (error) => {
-          this.modalService.abrirModal(ModalType.WARNING,
+          this.modalService.abrirModal(ModalType.ERROR,
             [
               'Tu usuario es inválido, verifica que tu mail y password estén correctos.\n',
               'Si aún no puedes ingresar dirigete a soporte.',

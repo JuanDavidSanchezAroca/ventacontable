@@ -1,9 +1,5 @@
 @import "./variables";
 
-@mixin qiip-container {
-  max-width: $page-max-width;
-  padding: 1rem;
-}
 
 @mixin for-big-desktop-up {
   @media (min-width: 1800px) {
