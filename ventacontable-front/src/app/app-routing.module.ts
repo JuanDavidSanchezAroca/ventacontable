@@ -17,6 +17,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./feature/user-management/user-management.module').then((m) => m.UserManagementModule)
   },
+  {
+    path: 'product-management',
+    loadChildren: () =>
+      import('./feature/product-management/product-management.module').then((m) => m.ProductManagementModule)
+  },
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: './src/app', loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule) },
   { path: '**', redirectTo: 'login', pathMatch: 'full' },

@@ -19,4 +19,8 @@ export class InicioComponent implements OnInit {
     this.router.navigate(['/user-management/create-user']);
   }
 
+  createProduct(){
+    this.router.navigate(['/product-management/category']);
+  }
+
 }

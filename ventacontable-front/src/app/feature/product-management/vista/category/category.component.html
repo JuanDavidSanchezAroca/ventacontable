@@ -1,0 +1,57 @@
+<div class="container" *ngIf="categoryList">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <mat-card>
+                <div class="titulo-gestion-categoria">
+                    <mat-card-title>Gestión de categorias</mat-card-title>
+                </div>
+                <div class="subtitulo-gestion-categoria">
+                    <mat-card-subtitle>Gestiona el proceso creación de nuevas categorias en el
+                        sistema.
+                    </mat-card-subtitle>
+                    <mat-divider></mat-divider>
+                </div>
+                <mat-card-actions class="card-action" align="end">
+                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                        <mat-icon>autorenew</mat-icon>
+                    </button>
+                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="openDialog()">
+                        <mat-icon>add Autorenew</mat-icon>
+                    </button>
+                </mat-card-actions>
+                <mat-card-content>
+                    <div class="row justify-content-begin input">
+                        <mat-form-field class="mat-form-field">
+                            <mat-label>Filtro</mat-label>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Palabra" #input>
+                        </mat-form-field>
+                    </div>
+                    <table mat-table [dataSource]="categoryList" class="mat-elevation-z8">
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef class="title-table"> No. </th>
+                            <td mat-cell *matCellDef="let element" class="item-table"> {{element.id}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="nombre">
+                            <th mat-header-cell *matHeaderCellDef class="title-table"> Nombre </th>
+                            <td mat-cell *matCellDef="let element" class="item-table"> {{element.nombre}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="descripcion">
+                            <th mat-header-cell *matHeaderCellDef class="title-table"> Descripción </th>
+                            <td mat-cell *matCellDef="let element" class="item-table"> {{element.descripcion}} </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                        <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell" colspan="4">Resultado no encontrado con el filtro : "{{input.value}}"</td>
+                          </tr>
+                    </table>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
