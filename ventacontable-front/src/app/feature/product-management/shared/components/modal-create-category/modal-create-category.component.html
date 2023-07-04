@@ -9,7 +9,7 @@
           <div class="row justify-content-center input">
             <mat-form-field class="mat-form-field" appearance="outline">
               <mat-label>Nombre</mat-label>
-              <input class="input-text" type="text" placeholder="Ingrese el Nombre" matInput id="name"
+              <input class="input-text" type="text" placeholder="Ingrese el nombre categoria" matInput id="name"
                 formControlName="nombre" />
               <mat-error class="error" *ngIf="getControl('nombre')?.invalid && 
                                         getControl('nombre')?.touched ||
@@ -21,7 +21,7 @@
           <div class="row justify-content-center input">
             <mat-form-field class="mat-form-field" appearance="outline">
               <mat-label>Descripción</mat-label>
-              <input class="input-text" type="text" placeholder="Ingrese la descripción" matInput id="descripcion"
+              <input class="input-text" type="text" placeholder="Ingrese la descripción categoria" matInput id="descripcion"
                 formControlName="descripcion" />
               <mat-error class="error" *ngIf="getControl('descripcion')?.invalid && 
                                         getControl('descripcion')?.touched ||
