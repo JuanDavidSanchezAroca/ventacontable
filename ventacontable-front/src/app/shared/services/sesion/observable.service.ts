@@ -14,7 +14,7 @@ export class ObservableService {
   }
 
   constructor() {
-    this.mostrarInformacionMenu = new BehaviorSubject<boolean>(true);
+    this.mostrarInformacionMenu = new BehaviorSubject<boolean>(false);
     this.mostrarInformacionMenuObservable = this.mostrarInformacionMenu.asObservable();
   }
 
