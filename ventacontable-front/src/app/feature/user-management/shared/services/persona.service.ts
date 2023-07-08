@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { catchError } from "rxjs";
 import { RestService } from "src/app/core/services/rest.service";
+import { ConstantUser } from "../constants/path-constants-user";
 import { Persona } from "../interfaces/user";
 
 @Injectable({
@@ -16,7 +17,7 @@ export class PersonaService extends RestService {
 
     registrar(body: Persona): Promise<any> {
         return new Promise((resolve, reject) => {
-          this.doPost('/api/ventacontable/persona', body)
+          this.doPost(ConstantUser.API_USER, body)
             .pipe(
               catchError(error => {
                 reject(error); 

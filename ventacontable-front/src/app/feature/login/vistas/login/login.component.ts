@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
@@ -6,13 +6,14 @@ import { Login } from 'src/app/core/models/interface/login';
 import { SesionService } from 'src/app/core/services/session.service';
 import { ModalType } from 'src/app/shared/enums/modal-type';
 import { ModalService } from 'src/app/shared/services/modal.service';
+import { ObservableService } from 'src/app/shared/services/sesion/observable.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   loginForm!: FormGroup;
 
@@ -21,10 +22,17 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private sesionService: SesionService,
-    private modalService: ModalService) { }
+    private modalService: ModalService,
+    private navbarServicio: ObservableService) { }
 
   ngOnInit() {
     this.loginForm = this.obtenerFormulario();
+    this.navbarServicio.mostrarInformacion(false);
+    this.sesionService.cerrarSesion();
+  }
+
+  ngOnDestroy(): void {
+    this.navbarServicio.mostrarInformacion(true);
   }
 
   private obtenerFormulario() {

@@ -10,17 +10,20 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('./feature/home/home.module').then((m) => m.HomeModule)
+      import('./feature/home/home.module').then((m) => m.HomeModule),
+    canActivate: [SecurityGuard]
   },
   {
     path: 'user-management',
     loadChildren: () =>
-      import('./feature/user-management/user-management.module').then((m) => m.UserManagementModule)
+      import('./feature/user-management/user-management.module').then((m) => m.UserManagementModule),
+    canActivate: [SecurityGuard]
   },
   {
     path: 'product-management',
     loadChildren: () =>
-      import('./feature/product-management/product-management.module').then((m) => m.ProductManagementModule)
+      import('./feature/product-management/product-management.module').then((m) => m.ProductManagementModule),
+    canActivate: [SecurityGuard]
   },
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: './src/app', loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule) },

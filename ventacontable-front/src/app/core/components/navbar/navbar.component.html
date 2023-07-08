@@ -1,5 +1,7 @@
 <header class="header-internal-pages">
   <mat-toolbar color="primary">
-    <span class="title-navbar">BOUTIQUE MONIK</span>
+    <span class="example-spacer"></span>
+    <mat-icon aria-hidden="false" fontIcon="logout" *ngIf="mostrarMenu"></mat-icon>
+    <mat-label class="cerrar-sesion" (click)="cerrarSesion()" *ngIf="mostrarMenu">Cerrar Sesión</mat-label>
   </mat-toolbar>
 </header>

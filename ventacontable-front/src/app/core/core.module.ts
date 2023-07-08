@@ -4,6 +4,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent } from './components/footer/footer.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 
@@ -17,6 +19,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CommonModule,
     MatToolbarModule,
     MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule
   ]
 })
 export class CoreModule { }

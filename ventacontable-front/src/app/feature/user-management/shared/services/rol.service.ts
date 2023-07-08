@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { map, Observable } from "rxjs";
 import { RestService } from "src/app/core/services/rest.service";
+import { ConstantRol } from "../constants/path-constants-rol";
 import { DataResponseRol } from "../interfaces/rol";
 
 @Injectable({
@@ -15,7 +16,7 @@ export class RolService extends RestService {
     }
 
     listarRoles(): Observable<DataResponseRol> {
-        return this.doGet<DataResponseRol>("/api/ventacontable/rol")
+        return this.doGet<DataResponseRol>(ConstantRol.API_ROL)
             .pipe(
                 map((response: DataResponseRol) => {
                     return response;
