@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ObservableService } from 'src/app/shared/services/sesion/observable.service';
@@ -10,6 +10,8 @@ import { SesionService } from '../../services/session.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit, OnDestroy{
+
+  @Output() toggleEvent = new EventEmitter<void>();
 
   mostrarInformacionMenu!: Subscription;
   mostrarMenu = false;
@@ -24,6 +26,7 @@ export class NavbarComponent implements OnInit, OnDestroy{
     this.sesionService.cerrarSesion();
     this.router.navigate(['/login'])
   }
+
 
   ngOnInit() {
     this.mostrarInformacionMenu = this.navbarService.montrarMenu.subscribe(

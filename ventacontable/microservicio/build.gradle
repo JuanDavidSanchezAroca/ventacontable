@@ -14,7 +14,7 @@ allprojects {
 	project.ext.junit5 = ["org.junit.jupiter:junit-jupiter-api:5.3.1"]
 	project.ext.junit4 = ["junit:junit:4.12"]
 	project.ext.mockito = ['org.mockito:mockito-all:1.10.19']
-	project.ext.lombok = ["org.projectlombok:lombok:1.18.10"]
+	project.ext.lombok = ["org.projectlombok:lombok:1.18.22"]
 	
 	project.ext.springboottest = ["org.springframework.boot:spring-boot-starter-test:${springBootVersion}"]
 	project.ext.springbootweb = ["org.springframework.boot:spring-boot-starter-web:${springBootVersion}"]
@@ -29,8 +29,8 @@ allprojects {
 							]
 
 	project.ext.swagger = [
-			"io.springfox:springfox-swagger-ui:2.9.2",
-			"io.springfox:springfox-swagger2:2.9.2"
+			"io.springfox:springfox-swagger-ui:2.10.5",
+			"io.springfox:springfox-swagger2:2.10.5"
 	]
 
 	project.ext.db = ["org.postgresql:postgresql:42.5.1"]
@@ -55,6 +55,7 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'application'
 
 group = 'com.ventacontable'
 version = '0.0.1-SNAPSHOT'

@@ -1,5 +1,8 @@
 <header class="header-internal-pages">
   <mat-toolbar color="primary">
+    <button mat-icon-button *ngIf="mostrarMenu" class="example-icon" (click)="toggleEvent.emit()">
+      <mat-icon>menu</mat-icon>
+    </button>
     <span class="example-spacer"></span>
     <mat-icon aria-hidden="false" fontIcon="logout" *ngIf="mostrarMenu"></mat-icon>
     <mat-label class="cerrar-sesion" (click)="cerrarSesion()" *ngIf="mostrarMenu">Cerrar Sesión</mat-label>

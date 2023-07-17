@@ -1,3 +1,38 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<mat-sidenav-container class="app-sidenav-container" autosize>
+    <mat-sidenav class="app-sidenav" #sidenav>
+        <mat-toolbar class="title" color="primary">
+            Menu
+        </mat-toolbar>
+        <mat-nav-list>
+            <a class="title" mat-list-item routerLink="/home">
+                <mat-icon class="icon">home</mat-icon>
+                <span>Inicio</span>
+            </a>
+            <a class="title" mat-list-item href="...">
+                <mat-icon class="icon">inventory</mat-icon>
+                <span>Gestión de productos</span>
+            </a>
+            <mat-nav-list>
+                <a class="subtitle"  mat-list-item routerLink="/product-management/category">
+                    <mat-icon class="icon">category</mat-icon>
+                    <span>Gestión de categorías</span>
+                </a>
+            </mat-nav-list>
+            <a class="title" mat-list-item href="...">
+                <mat-icon class="icon">group</mat-icon>
+                <span>Gestión de usuarios</span>
+            </a>
+            <mat-nav-list>
+                <a  class="subtitle" mat-list-item routerLink="/user-management/create-user">
+                    <mat-icon class="icon">group_add</mat-icon>
+                    <span>Crear usuario</span>
+                </a>
+            </mat-nav-list>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="app-sidenav-content">
+        <app-navbar (toggleEvent)="sidenav.toggle()"></app-navbar>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>
