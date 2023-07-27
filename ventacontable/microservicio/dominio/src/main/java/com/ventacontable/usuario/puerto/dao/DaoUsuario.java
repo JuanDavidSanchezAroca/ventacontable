@@ -21,6 +21,8 @@ public interface DaoUsuario {
     boolean buscarId(Integer id);
 
     boolean validarUsuarioPassword(Usuario usuario);
+
+    Usuario buscarUsuarioByEmail(String email);
 }
 
 

@@ -3,8 +3,10 @@ package com.ventacontable.usuario.modelo.entidad;
 import static com.ventacontable.dominio.ValidadorArgumento.validarRegex;
 import static com.ventacontable.dominio.ValidadorArgumento.validarLongitudMinima;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
+@NoArgsConstructor
 public class Usuario {
     private static final String VALIDAR_CORREO = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
     private static final String CORREO_INVALIDO = "El correo no cumple con el formato correcto";

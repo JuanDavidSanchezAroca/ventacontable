@@ -1,5 +1,6 @@
 package com.ventacontable.adaptador.dao.usuario;
 
+import com.ventacontable.adaptador.dao.usuario.mapeo.MapeoUsuario;
 import com.ventacontable.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ventacontable.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ventacontable.usuario.modelo.entidad.Usuario;
@@ -17,6 +18,9 @@ public class DaoUsuarioAdaptador implements DaoUsuario {
 
     @SqlStatement(namespace = "usuario", value = "existe")
     private static String sqlBuscarNombre;
+
+    @SqlStatement(namespace = "usuario", value = "obtener_usuario")
+    private static  String sqlObtenerUsuario;
 
     @SqlStatement(namespace = "usuario", value = "existeId")
     private static String sqlBuscarId;
@@ -51,6 +55,14 @@ public class DaoUsuarioAdaptador implements DaoUsuario {
         parameterSource.addValue(NOMBRE, usuario.getUsuario());
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
                 .queryForObject(sqlValidarUsuarioPassword, parameterSource, Boolean.class);
+    }
+
+    @Override
+    public Usuario buscarUsuarioByEmail(String email) {
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue(NOMBRE, email);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
+                .queryForObject(sqlObtenerUsuario, parameterSource, new MapeoUsuario());
     }
 
 }

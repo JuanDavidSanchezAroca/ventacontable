@@ -1,0 +1,1 @@
+SELECT correo, password FROM usuario WHERE correo =:usuario
