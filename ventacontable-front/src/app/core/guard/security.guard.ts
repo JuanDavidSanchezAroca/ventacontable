@@ -1,4 +1,4 @@
-import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { SesionService } from '../services/session.service';
 import { ObservableService } from 'src/app/shared/services/sesion/observable.service';
@@ -7,7 +7,7 @@ import { ObservableService } from 'src/app/shared/services/sesion/observable.ser
     providedIn: 'root'
 })
 
-export class SecurityGuard implements CanActivate {
+export class SecurityGuard  {
 
     constructor(
         private sessionService: SesionService,
