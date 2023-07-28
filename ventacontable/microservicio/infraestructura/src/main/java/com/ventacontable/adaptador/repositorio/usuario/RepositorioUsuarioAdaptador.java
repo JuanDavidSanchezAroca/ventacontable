@@ -4,6 +4,9 @@ import com.ventacontable.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ventacontable.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ventacontable.usuario.modelo.entidad.Usuario;
 import com.ventacontable.usuario.puerto.repositorio.RepositorioUsuario;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -21,12 +24,19 @@ public class RepositorioUsuarioAdaptador implements RepositorioUsuario {
 
     @Override
     public Integer registrar(Usuario usuario) {
-        return this.customNamedParameterJdbcTemplate.crear(usuario, sqlRegistrar, "id").intValue();
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        Usuario us = new Usuario(usuario.getUsuario(), encoder.encode(usuario.getPassword()));
+        return this.customNamedParameterJdbcTemplate.crear(us, sqlRegistrar, "id").intValue();
     }
 
     @Override
     public Integer actualizar(Usuario usuario, Integer id) {
         this.customNamedParameterJdbcTemplate.actualizar(usuario, sqlActualizar, id);
         return id;
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }
