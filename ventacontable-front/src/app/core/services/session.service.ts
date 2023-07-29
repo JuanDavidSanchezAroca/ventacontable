@@ -67,17 +67,15 @@ export class SesionService extends RestService {
     }
 
     esTokenExpirado(): boolean {
-
         const token = this.obtenerToken();
-
         if (!token) {
             return true;
         }
+
         const date = this.obtenerExpiracionToken(token);
         if (date === undefined || date == null) {
             return false;
         }
-        console.log(date.valueOf() + " hora "+ new Date().valueOf())
         return date.valueOf() <= new Date().valueOf();
     }
 }
