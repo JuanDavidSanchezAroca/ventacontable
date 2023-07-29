@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
@@ -40,11 +40,14 @@ export class RestService {
     );
   }
 
-  protected doPost<T, R>(serviceUrl: string, body: T, opts?: Options): Observable<R> {
+  protected doPost<T, R>(serviceUrl: string, body: T, opts?: Options): Observable<{ response: R, headers: HttpHeaders }> {
     const ropts = this.createOptions(opts);
 
-    return this.http.post(serviceUrl, body, ropts).pipe(
-      map(response => response as R)
+    return this.http.post<R>(serviceUrl, body, { ...ropts, observe: 'response' }).pipe(
+      map((response: HttpResponse<R>) => {
+        const headers: HttpHeaders = response.headers;
+        return { response: response.body as R, headers };
+      })
     );
   }
 
@@ -55,7 +58,7 @@ export class RestService {
       params: parametros
     } : ropts;
     return this.http.get(serviceUrl, options).pipe(
-      map(response => response as T)
+      map(response => response as T) 
     );
   }
 }

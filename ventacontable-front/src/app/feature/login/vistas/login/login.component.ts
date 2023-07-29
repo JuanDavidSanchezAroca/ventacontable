@@ -49,12 +49,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   onSubmit() {
     if (this.loginForm.valid) {
       const login: Login = {
-        correo: this.loginForm.value.username,
+        usuario: this.loginForm.value.username,
         password: this.loginForm.value.password
       };
       this.sesionService.iniciarSesion(login).pipe(tap({
         next: () => {
-          localStorage.setItem('user', 'true');
           this.router.navigate(['/home']);
         },
         error: (error) => {
