@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class TokenUtil{
     private final static String ACCESS_TOKEN_SECRET = "4qhq8LrEBfYcaRHxhdb9zURb2rf8e7Ud";
-    private final static Long ACCESS_TOKEN_VALIDITY_SECONDS = 60L;
+    private final static Long ACCESS_TOKEN_VALIDITY_SECONDS = 3600L;
 
     public static String crateToken( String email){
         long expirationTime = ACCESS_TOKEN_VALIDITY_SECONDS * 1000L;
