@@ -51,6 +51,17 @@ export class RestService {
     );
   }
 
+  protected doPut<T, R>(serviceUrl: string, body: T, opts?: Options): Observable<{ response: R, headers: HttpHeaders }> {
+    const ropts = this.createOptions(opts);
+
+    return this.http.put<R>(serviceUrl, body, { ...ropts, observe: 'response' }).pipe(
+      map((response: HttpResponse<R>) => {
+        const headers: HttpHeaders = response.headers;
+        return { response: response.body as R, headers };
+      })
+    );
+  }
+
   protected doGetParameters<T>(serviceUrl: string, parametros: HttpParams, opts?: Options): Observable<T> {
     const ropts = this.createOptions(opts);
     const options = parametros !== null ? {

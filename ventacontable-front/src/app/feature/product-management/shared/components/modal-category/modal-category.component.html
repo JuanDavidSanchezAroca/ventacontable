@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-md-10">
       <div class="titulo-crear-categoria">
-        <mat-card-title>Crear categoria</mat-card-title>
+        <mat-card-title>{{title}}</mat-card-title>
       </div>
       <div mat-dialog-content>
         <form [formGroup]="categoryForm" #ngForm="ngForm" autocomplete="off" (ngSubmit)="onSubmit()">
@@ -18,7 +18,7 @@
               </mat-error>
             </mat-form-field>
           </div>
-          <div class="row justify-content-center input">
+          <div class="row justify-content-center input" *ngIf="!modalCategory.delete">
             <mat-form-field class="mat-form-field" appearance="outline">
               <mat-label>Descripción</mat-label>
               <input class="input-text" type="text" placeholder="Ingrese la descripción categoria" matInput id="descripcion"
@@ -32,7 +32,7 @@
           </div>
           <div mat-dialog-actions align="end">
             <button mat-raised-button color="primary" (click)="onNoClick()">Cancelar</button>
-            <button mat-raised-button color="primary" [disabled]="categoryForm.invalid">Agregar</button>
+            <button mat-raised-button color="primary" [disabled]="categoryForm.invalid">{{titleButton}}</button>
           </div>
         </form>
       </div>

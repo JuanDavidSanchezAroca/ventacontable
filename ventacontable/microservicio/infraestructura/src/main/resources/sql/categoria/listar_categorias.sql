@@ -1,1 +1,1 @@
-SELECT id, nombre, descripcion from CATEGORIA
+SELECT id, nombre, descripcion FROM CATEGORIA ORDER BY id ASC

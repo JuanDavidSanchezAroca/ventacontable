@@ -12,13 +12,16 @@
                     <mat-divider></mat-divider>
                 </div>
                 <mat-card-actions class="card-action" align="end">
-                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                    <button [disabled]="selectedElement == undefined" mat-fab color="primary"
+                    (click)="openDialog(false,true,false)" aria-label="Example icon button with a delete icon">
                         <mat-icon>delete</mat-icon>
                     </button>
-                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                    <button [disabled]="selectedElement == undefined" mat-fab color="primary"
+                    (click)="openDialog(true,false,false)" aria-label="Example icon button with a delete icon">
                         <mat-icon>autorenew</mat-icon>
                     </button>
-                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="openDialog()">
+                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon"
+                        (click)="openDialog(false,false,true)">
                         <mat-icon>add Autorenew</mat-icon>
                     </button>
                 </mat-card-actions>
@@ -43,11 +46,12 @@
                             <td mat-cell *matCellDef="let element" class="item-table"> {{element.descripcion}} </td>
                         </ng-container>
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectElement(row)"
+                            [ngClass]="{'selected': selectedElement === row}"></tr>
                         <tr class="mat-row" *matNoDataRow>
-                            <td class="mat-cell" colspan="4">Resultado no encontrado con el filtro : "{{input.value}}"</td>
-                          </tr>
+                            <td class="mat-cell" colspan="4">Resultado no encontrado con el filtro : "{{input.value}}"
+                            </td>
+                        </tr>
                     </table>
                     <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
                 </mat-card-content>
