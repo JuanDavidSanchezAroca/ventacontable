@@ -20,7 +20,7 @@ export class InicioComponent implements OnInit {
   }
 
   createProduct(){
-    this.router.navigate(['/product-management/category']);
+    this.router.navigate(['/product-management']);
   }
 
 }
