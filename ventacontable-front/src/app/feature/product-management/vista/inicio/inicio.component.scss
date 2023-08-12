@@ -1,0 +1,33 @@
+@import "../../../../../scss/variables";
+
+.tap-category {
+  height: auto;
+  margin: 20px 0px 20px 0px;
+}
+
+.info {
+  align-self: center;
+}
+
+.title {
+  color: $brown_2;
+  font-family: $fontPrimary;
+}
+
+.text {
+  font-family: $fontSecond-R;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.responsive-image {
+  max-width: 100%;
+  height: 300px;
+  width: 600px;
+}

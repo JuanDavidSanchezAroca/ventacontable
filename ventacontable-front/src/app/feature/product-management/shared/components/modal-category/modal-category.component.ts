@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { tap } from 'rxjs';
-import { Categoria } from 'src/app/feature/user-management/shared/interfaces/category';
 import { ModalType } from 'src/app/shared/enums/modal-type';
 import { ModalService } from 'src/app/shared/services/modal.service';
 import { Category } from '../../interfaces/category';

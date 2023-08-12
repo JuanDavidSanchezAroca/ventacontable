@@ -1,0 +1,56 @@
+<mat-tab-group headerPosition="below"  animationDuration="2000ms" #tabGroup (selectedIndexChange)="onTabChange($event)">
+    <mat-tab class="text" label="Gestión de Categoria">
+      <div class="container">
+        <div class="row tap-category">
+          <div class="col-10 col-md-6 col-sm-8 info">
+            <h1 class="title">Gestion de Categorias</h1>
+            <p class="text">Administra y clasifica tus productos para una gestión oportuna</p>
+            <div class="button">
+              <button mat-raised-button color="primary" [routerLink]="'/product-management/category'">Gestión de categorias</button>
+            </div>
+          </div>
+          <div class="col-10 col-md-6 col-sm-8">
+            <mat-card class="image-container">
+              <img src="../../../../../assets/img/fashion.png" alt="Imagen relacionada" class="responsive-image">
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Gestión de Productos">
+      <div class="container">
+        <div class="row tap-category">
+          <div class="col-10 col-md-6 col-sm-8">
+            <mat-card class="image-container">
+              <img src="../../../../../assets/img/fashion_1.png" alt="Imagen relacionada" class="responsive-image">
+            </mat-card>
+          </div>
+          <div class="col-10 col-md-6 col-sm-8 info">
+            <h1 class="title">Gestion de producto</h1>
+            <p class="text">Crea, actualiza y elimina los productos</p>
+            <div class="button">
+              <button mat-raised-button color="primary" >Gestión de producto</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Gestión de Inventario">
+      <div class="container">
+        <div class="row tap-category">
+          <div class="col-10 col-md-6 col-sm-8 info">
+            <h1 class="title">Gestion de Inventario</h1>
+            <p class="text">LLeva la contabilidad y el stock de tus productos de manera oportuna</p>
+            <div class="button">
+              <button mat-raised-button color="primary">Gestión de Inventario</button>
+            </div>
+          </div>
+          <div class="col-10 col-md-6 col-sm-8">
+            <mat-card class="image-container">
+              <img src="../../../../../assets/img/fashion_2.png" alt="Imagen relacionada" class="responsive-image">
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
