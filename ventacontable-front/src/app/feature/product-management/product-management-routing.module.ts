@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from './vista/category/category.component';
 import { InicioComponent } from './vista/inicio/inicio.component';
+import { ProductComponent } from './vista/product/product.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
     path: 'category',
     component: CategoryComponent,
   },
+  {
+    path: 'product',
+    component: ProductComponent,
+  }
 ];
 
 @NgModule({

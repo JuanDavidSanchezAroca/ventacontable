@@ -25,7 +25,7 @@ export class InicioComponent implements OnInit, OnDestroy {
         const selectedIndex = (this.tabGroup.selectedIndex + 1) % this.tabGroup._tabs.length;
         this.tabGroup.selectedIndex = selectedIndex;
       }
-    }, 6000); 
+    }, 10000); 
   }
 
   clearInterval() {

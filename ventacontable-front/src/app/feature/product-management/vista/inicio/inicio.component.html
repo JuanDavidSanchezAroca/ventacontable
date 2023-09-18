@@ -1,4 +1,4 @@
-<mat-tab-group headerPosition="below"  animationDuration="2000ms" #tabGroup (selectedIndexChange)="onTabChange($event)">
+<mat-tab-group headerPosition="below"  animationDuration="1500ms" #tabGroup (selectedIndexChange)="onTabChange($event)">
     <mat-tab class="text" label="Gestión de Categoria">
       <div class="container">
         <div class="row tap-category">
@@ -20,7 +20,7 @@
         </div>
       </div>
     </mat-tab>
-    <mat-tab label="Gestión de Productos">
+    <mat-tab label="Creación de Producto">
       <div class="container">
         <div class="row tap-category">
           <div class="col-12 col-md-6 col-sm-8">
@@ -35,7 +35,7 @@
                 este módulo te brinda un acceso fluido y atractivo a una amplia gama de prendas 
                 y accesorios que se adaptan a tu estilo único.</p>
             <div class="button">
-              <button mat-raised-button color="primary" >Gestión de producto</button>
+              <button mat-raised-button color="primary" [routerLink]="'/product-management/product'">Creación de producto</button>
             </div>
           </div>
         </div>

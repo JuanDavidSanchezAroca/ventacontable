@@ -1,26 +1,25 @@
 package com.ventacontable.producto.modelo.entidad;
+
 import lombok.Getter;
 import java.util.List;
 import static com.ventacontable.dominio.ValidadorArgumento.validarObligatorio;
 import static com.ventacontable.dominio.ValidadorArgumento.validarPositivo;
 import static com.ventacontable.dominio.ValidadorArgumento.validarMenor;
-import static com.ventacontable.dominio.ValidadorArgumento.validarNoVacio;
 
 @Getter
 public class Producto {
 
-    private static final String SE_DEBE_INGRESAR_NOMBRE_PRODUCTO = "Se debe ingresar el nombre del producto";
-    private static final String SE_DEBE_INGRESAR_CODIGO_PRODUCTO = "Se debe ingresar el codigo del producto";
-    private static final String SE_DEBE_INGRESAR_EL_VALOR_MINIMO = "Se debe ingresar el valor minimo del producto";
-    private static final String SE_DEBE_INGRESAR_EL_VALOR_MAXIMO = "Se debe ingresar el valor maximo del producto";
-    private static final String SE_DEBE_INGRESAR_EL_VALOR_BASE = "Se debe ingresar el valor base del producto";
-    private static final String SE_DEBE_INGRESAR_VALORES_POSITIVOS= "Se deben ingresar valores positivos";
+    private static final String SE_DEBE_INGRESAR_NOMBRE_PRODUCTO = "Debes ingresar el nombre del producto.";
+    private static final String SE_DEBE_INGRESAR_CODIGO_PRODUCTO = "Debes ingresar el código del producto.";
+    private static final String SE_DEBE_INGRESAR_EL_VALOR_MINIMO = "Debes ingresar el valor mínimo del producto.";
+    private static final String SE_DEBE_INGRESAR_EL_VALOR_MAXIMO = "Debes ingresar el valor máximo del producto.";
+    private static final String SE_DEBE_INGRESAR_EL_VALOR_BASE = "Debes ingresar el valor base del producto.";
+    private static final String SE_DEBE_INGRESAR_VALORES_POSITIVOS= "Deben ingresarse valores positivos.";
     private static final String SE_DEBE_INGRESAR_UN_VALOR_MENOR_AL_MAXIMO =
-            "El valor minimo debe ser menor al valor maximo";
+            "El valor mínimo debe ser menor que el valor máximo.";
     private static final String SE_DEBE_INGRESAR_BASE_MENOR_PRECIO_MINIMO
-            = "El valor de la base debe ser menor al precio mínimo";
-    private static final String SE_DEBE_INGRESAR_VALOR_POSITIVO = "El valor de cantidad disponible no es permitido";
-    private static final String SE_DEBE_INGRESAR_CATEGORIA = "El producto debe tener asociada al menos una categoria";
+            = "El valor de la base debe ser menor que el precio mínimo.";
+    private static final String SE_DEBE_INGRESAR_VALOR_POSITIVO = "No se permite el valor de cantidad disponible.";
 
     private int idProducto;
     private String codigo;
@@ -49,7 +48,6 @@ public class Producto {
         validarPositivo(cantidadDisponible,SE_DEBE_INGRESAR_VALOR_POSITIVO);
         validarMenor(precioMinimo,precioMaximo,SE_DEBE_INGRESAR_UN_VALOR_MENOR_AL_MAXIMO);
         validarMenor(precioBase,precioMinimo,SE_DEBE_INGRESAR_BASE_MENOR_PRECIO_MINIMO);
-        validarNoVacio(categorias,SE_DEBE_INGRESAR_CATEGORIA);
         this.idProducto = idProducto;
         this.codigo = codigo;
         this.nombre = nombre;

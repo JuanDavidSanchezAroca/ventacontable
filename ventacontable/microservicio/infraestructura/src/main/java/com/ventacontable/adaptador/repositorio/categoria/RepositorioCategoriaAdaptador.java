@@ -30,7 +30,6 @@ public class RepositorioCategoriaAdaptador implements RepositorioCategoria {
     @Override
     public int crear(Categoria categoria) {
         return this.customNamedParameterJdbcTemplate.crear(categoria, sqlRegistrar, "id").intValue();
-
     }
 
     @Override

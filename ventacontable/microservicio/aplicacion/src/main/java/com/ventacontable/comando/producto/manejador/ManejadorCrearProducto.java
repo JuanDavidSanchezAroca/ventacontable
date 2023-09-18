@@ -2,6 +2,7 @@ package com.ventacontable.comando.producto.manejador;
 
 import com.ventacontable.comando.producto.ComandoProducto;
 import com.ventacontable.comando.producto.fabrica.FabricaProducto;
+import com.ventacontable.inventario.servicio.CrearInventarioServicio;
 import com.ventacontable.manejador.ManejadorComandoRespuesta;
 import com.ventacontable.producto.modelo.entidad.Producto;
 import com.ventacontable.producto.servicio.CrearProductoServicio;
@@ -14,7 +15,8 @@ public class ManejadorCrearProducto implements ManejadorComandoRespuesta<Comando
     private final CrearProductoServicio crearProductoServicio;
 
 
-    public ManejadorCrearProducto(FabricaProducto fabricaProducto,CrearProductoServicio crearProductoServicio) {
+    public ManejadorCrearProducto(FabricaProducto fabricaProducto,
+                                  CrearProductoServicio crearProductoServicio) {
         this.fabricaProducto = fabricaProducto;
         this.crearProductoServicio = crearProductoServicio;
     }

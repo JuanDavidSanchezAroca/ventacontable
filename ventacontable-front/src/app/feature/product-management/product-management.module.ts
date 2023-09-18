@@ -16,6 +16,9 @@ import { MatInputModule } from '@angular/material/input';
 import { ModalService } from 'src/app/shared/services/modal.service';
 import { MatTabsModule } from '@angular/material/tabs';
 import { InicioComponent } from './vista/inicio/inicio.component';
+import { ProductComponent } from './vista/product/product.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 
@@ -23,7 +26,8 @@ import { InicioComponent } from './vista/inicio/inicio.component';
   declarations: [
     CategoryComponent,
     ModalCategoryComponent,
-    InicioComponent
+    InicioComponent,
+    ProductComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +43,9 @@ import { InicioComponent } from './vista/inicio/inicio.component';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCheckboxModule,
+    MatExpansionModule
   ],
   providers:[
     ModalService
