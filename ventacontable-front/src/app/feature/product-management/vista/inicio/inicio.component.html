@@ -1,0 +1,64 @@
+<mat-tab-group headerPosition="below"  animationDuration="1500ms" #tabGroup (selectedIndexChange)="onTabChange($event)">
+    <mat-tab class="text" label="Gestión de Categoria">
+      <div class="container">
+        <div class="row tap-category">
+          <div class="col-10 col-md-6 col-sm-8 info">
+            <h1 class="title">Explora la Diversidad de la Moda</h1>
+            <p class="text">
+               Nuestro innovador Módulo de Gestión de Categorías de Ropa ha sido diseñado cuidadosamente 
+               para brindarte una forma más fácil y atractiva de gestionar nuestra amplia colección de prendas
+                y accesorios.</p>
+            <div class="button">
+              <button mat-raised-button color="primary" [routerLink]="'/product-management/category'">Gestión de categorias</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-sm-8">
+            <mat-card class="image-container">
+              <img src="../../../../../assets/img/fashion_1.png" alt="Imagen relacionada" class="responsive-image">
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Creación de Producto">
+      <div class="container">
+        <div class="row tap-category">
+          <div class="col-12 col-md-6 col-sm-8">
+            <mat-card class="image-container">
+              <img src="../../../../../assets/img/fashion.png" alt="Imagen relacionada" class="responsive-image">
+            </mat-card>
+          </div>
+          <div class="col-10 col-md-6 col-sm-8 info">
+            <h1 class="title">Tu Pasarela Personalizada de Estilo</h1>
+            <p class="text">
+                Diseñado para simplificar y optimizar la exploración de productos de moda, 
+                este módulo te brinda un acceso fluido y atractivo a una amplia gama de prendas 
+                y accesorios que se adaptan a tu estilo único.</p>
+            <div class="button">
+              <button mat-raised-button color="primary" [routerLink]="'/product-management/product'">Creación de producto</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Gestión de Inventario">
+      <div class="container">
+        <div class="row tap-category">
+          <div class="col-10 col-md-6 col-sm-8 info">
+            <h1 class="title">Control Total de tu Colección de Moda</h1>
+            <p class="text">Diseñado meticulosamente para proporcionarte un control total sobre tus existencias,
+               este módulo te ofrece una visión clara y organizada de tu inventario de ropa,
+                permitiéndote tomar decisiones informadas y mantener a tus clientes satisfechos.</p>
+            <div class="button">
+              <button mat-raised-button color="primary">Gestión de Inventario</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-sm-8">
+            <mat-card class="image-container">
+              <img src="../../../../../assets/img/fashion_2.png" alt="Imagen relacionada" class="responsive-image">
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>

@@ -1,0 +1,142 @@
+<div class="container" *ngIf="typeRoles">
+  <div class="row justify-content-center create-user">
+    <div class="col-md-8">
+      <mat-card class="border-card">
+        <div class="titulo-crear-usuario">
+          <mat-card-title>Crear Usuario</mat-card-title>
+        </div>
+        <div class="subtitulo-crear-usuario">
+          <mat-card-subtitle>Gestiona el proceso de registro y creación de nuevos usuarios en el
+            sistema.</mat-card-subtitle>
+          <mat-divider></mat-divider>
+        </div>
+        <mat-card-content>
+          <form [formGroup]="formulario" #ngForm="ngForm" autocomplete="off" (ngSubmit)="submitFormulario()">
+            <div class="row justify-content-center input">
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Nombre(s)</mat-label>
+                <input matInput formControlName="nombre" placeholder="Ingrese nombre(s)">
+                <mat-error class="error" *ngIf="getControl('nombre')?.invalid && 
+                                        getControl('nombre')?.touched ||
+                                         ngForm.submitted">
+                  * Debe ingresar su nombre
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Apellido(s)</mat-label>
+                <input matInput formControlName="apellido" placeholder="Ingrese apellido(s)">
+                <mat-error class="error" *ngIf="getControl('apellido')?.invalid && 
+                                        getControl('apellido')?.touched ||
+                                         ngForm.submitted">
+                  * Debe ingresar sus apellidos
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="row justify-content-center input">
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Tipo de documento</mat-label>
+                <mat-select formControlName="tipoDocumento" placeholder="Seleccione el documento">
+
+                  <mat-option *ngFor="let type of typesDocuments" [value]="type.value">
+                    {{type.viewValue}}
+                  </mat-option>
+                </mat-select>
+                <mat-error class="error" *ngIf="getControl('tipoDocumento')?.invalid && 
+                                        getControl('tipoDocumento')?.touched ||
+                                         ngForm.submitted">
+                  * Debe seleccionar el tipo de documento
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Número de documento</mat-label>
+                <input matInput formControlName="identificacion" placeholder="Ingrese identificación">
+                <mat-error class="error" *ngIf="getControl('identificacion')?.invalid && 
+                                        getControl('identificacion')?.touched ||
+                                         ngForm.submitted">
+                  * Debe ingresar su identificacion
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="row justify-content-center input">
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Fecha de nacimiento</mat-label>
+                <input matInput formControlName="fechaNacimiento" [matDatepicker]="datepicker">
+                <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+                <mat-datepicker #datepicker></mat-datepicker>
+                <mat-error class="error" *ngIf="getControl('fechaNacimiento')?.invalid && 
+                                        getControl('fechaNacimiento')?.touched ||
+                                         ngForm.submitted">
+                  * Debe seleccionar su fecha de nacimiento
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Género</mat-label>
+                <mat-select formControlName="genero" placeholder="Seleccione el género">
+                  <mat-option *ngFor="let type of genderType" [value]="type.value">
+                    {{type.viewValue}}
+                  </mat-option>
+                </mat-select>
+                <mat-error class="error" *ngIf="getControl('genero')?.invalid && 
+                                        getControl('genero')?.touched ||
+                                         ngForm.submitted">
+                  * Debe seleccionar su genero
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="row justify-content-center input">
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Telefono</mat-label>
+                <input matInput formControlName="telefono" placeholder="Ingrese telefono">
+                <mat-error class="error" *ngIf="getControl('telefono')?.invalid && 
+                                        getControl('telefono')?.touched ||
+                                         ngForm.submitted">
+                  * Debe ingresar su telefono
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Dirección</mat-label>
+                <input matInput formControlName="direccion" placeholder="Ingrese su dirección">
+                <mat-error class="error" *ngIf="getControl('direccion')?.invalid && 
+                                        getControl('direccion')?.touched ||
+                                         ngForm.submitted">
+                  * Debe ingresar su direccion
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="row justify-content-center input">
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Correo</mat-label>
+                <input matInput formControlName="correo" placeholder="Ingrese su correo">
+                <mat-error class="error"
+                  *ngIf=" getControl('correo')?.touched && !getControl('correo')?.errors?.['email']">
+                  * Debe ingresar su correo
+                </mat-error>
+                <mat-error class="error" *ngIf=" getControl('correo')?.errors?.['email']">
+                  * Debe ingresar un correo valido
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Rol</mat-label>
+                <mat-select formControlName="tipoRol" placeholder="Seleccione el rol">
+                  <mat-option *ngFor="let rol of typeRoles.valor" [value]="rol.id">
+                    {{rol.nombre}}
+                  </mat-option>
+                </mat-select>
+                <mat-error class="error" *ngIf="getControl('tipoRol')?.invalid && 
+                                        getControl('tipoRol')?.touched ||
+                                         ngForm.submitted">
+                  * Debe seleccionar el tipo de rol
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="row justify-content-center input">
+              <div class="button">
+                <button mat-raised-button color="primary" [disabled]="formulario.invalid">Crear usuario</button>
+              </div>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

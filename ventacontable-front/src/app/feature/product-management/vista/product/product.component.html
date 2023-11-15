@@ -1,0 +1,204 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <mat-card class="border-card">
+                <div class="titulo-gestion-producto">
+                    <mat-card-title>Creación de producto</mat-card-title>
+                </div>
+                <div class="subtitulo-gestion-producto">
+                    <mat-card-subtitle>Gestiona el proceso creación de nuevos productos en el
+                        sistema.
+                    </mat-card-subtitle>
+                    <mat-divider></mat-divider>
+                </div>
+                <mat-card-content>
+                    <form [formGroup]="formulario" #ngForm="ngForm" autocomplete="off" (ngSubmit)="submitFormulario()">
+                        <mat-expansion-panel class="expansion-panel" [expanded]="step === 0" (opened)="setStep(0)">
+                            <mat-expansion-panel-header class="expansion-panel-header">
+                                <mat-panel-title class="input">
+                                    Información basica del producto
+                                </mat-panel-title>
+                                <mat-panel-description class="input">
+                                    Descripción de precio, detalle y cantidad
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <div class="row justify-content-center input">
+                                <mat-form-field class="mat-form-field" appearance="outline">
+                                    <mat-label>Codigo</mat-label>
+                                    <input matInput formControlName="codigo" placeholder="Ingrese codigo">
+                                    <mat-error class="error" *ngIf="getControl('codigo')?.invalid && 
+                                                        getControl('codigo')?.touched ||
+                                                         ngForm.submitted">
+                                        * Debe ingresar Codigo
+                                    </mat-error>
+                                </mat-form-field>
+                                <mat-form-field class="mat-form-field" appearance="outline">
+                                    <mat-label>nombre</mat-label>
+                                    <input matInput formControlName="nombre" placeholder="Ingrese nombre">
+                                    <mat-error class="error" *ngIf="getControl('nombre')?.invalid && 
+                                                            getControl('nombre')?.touched ||
+                                                             ngForm.submitted">
+                                        * Debe ingresar el nombre
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="row justify-content-center input">
+                                <mat-form-field class="mat-form-field" appearance="outline">
+                                    <mat-label>Descripción</mat-label>
+                                    <input matInput formControlName="descripcion" placeholder="Ingrese descripcion">
+                                    <mat-error class="error" *ngIf="getControl('descripcion')?.invalid && 
+                                                        getControl('descripcion')?.touched ||
+                                                         ngForm.submitted">
+                                        * Debe ingresar descripcion
+                                    </mat-error>
+                                </mat-form-field>
+                                <mat-form-field class="mat-form-field" appearance="outline">
+                                    <mat-icon matPrefix>attach_money</mat-icon>
+                                    <mat-label>Precio minimo</mat-label>
+                                    <input matInput type="number" formControlName="precioMinimo"
+                                        placeholder="Ingrese precio minimo">
+                                    <mat-error class="error" *ngIf="getControl('precioMinimo')?.invalid && 
+                                                            getControl('precioMinimo')?.touched ||
+                                                             ngForm.submitted">
+                                        * Debe ingresar el precio minimo
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="row justify-content-center input">
+                                <mat-form-field class="mat-form-field" appearance="outline">
+                                    <mat-icon matPrefix>attach_money</mat-icon>
+                                    <mat-label>Precio Maximo</mat-label>
+                                    <input matInput type="number" formControlName="precioMaximo"
+                                        placeholder="Ingrese el precio maximo">
+                                    <mat-error class="error" *ngIf="getControl('precioMaximo')?.invalid && 
+                                                        getControl('precioMaximo')?.touched ||
+                                                         ngForm.submitted">
+                                        * Debe ingresar precio Maximo
+                                    </mat-error>
+                                </mat-form-field>
+                                <mat-form-field class="mat-form-field" appearance="outline">
+                                    <mat-icon matPrefix>attach_money</mat-icon>
+                                    <mat-label>Precio base</mat-label>
+                                    <input matInput type="number" formControlName="precioBase"
+                                        placeholder="Ingrese precio base">
+                                    <mat-error class="error" *ngIf="getControl('precioBase')?.invalid && 
+                                                            getControl('precioBase')?.touched ||
+                                                             ngForm.submitted">
+                                        * Debe ingresar el precio minimo
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="row justify-content-center input">
+                                <mat-form-field class="mat-form-field" appearance="outline">
+                                    <mat-label>Cantidad disponible</mat-label>
+                                    <input matInput type="number" formControlName="cantidadDisponible"
+                                        placeholder="Ingrese la cantidad disponible">
+                                    <mat-error class="error" *ngIf="getControl('cantidadDisponible')?.invalid && 
+                                                        getControl('cantidadDisponible')?.touched ||
+                                                         ngForm.submitted">
+                                        * Debe ingresar la cantidad disponible
+                                    </mat-error>
+                                </mat-form-field>
+                                <mat-form-field class="mat-form-field" appearance="outline">
+                                    <mat-label>Talla</mat-label>
+                                    <input matInput formControlName="talla" placeholder="Ingrese la talla">
+                                    <mat-error class="error" *ngIf="getControl('talla')?.invalid && 
+                                                            getControl('talla')?.touched ||
+                                                             ngForm.submitted">
+                                        * Debe ingresar la talla
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="row justify-content-center input">
+                                <mat-form-field class="mat-form-field" appearance="outline">
+                                    <mat-label>Color </mat-label>
+                                    <input matInput formControlName="color" placeholder="Ingrese el color">
+                                    <mat-error class="error" *ngIf="getControl('color')?.invalid && 
+                                                        getControl('color')?.touched ||
+                                                         ngForm.submitted">
+                                        * Debe ingresar el color
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <mat-action-row>
+                                <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+                            </mat-action-row>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel class="expansion-panel" [expanded]="step === 1" (opened)="setStep(1)">
+                            <mat-expansion-panel-header class="expansion-panel-header">
+                                <mat-panel-title class="input">
+                                    Selección de categorias
+                                </mat-panel-title>
+                                <mat-panel-description class="input">
+                                    Lugar para asociar una categoria a un producto
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+
+                            <div class="row justify-content-begin input">
+                                <mat-form-field class="mat-form-field">
+                                    <mat-label>Filtro</mat-label>
+                                    <input matInput (keyup)="applyFilter($event)" placeholder="Palabra" #input>
+                                </mat-form-field>
+                            </div>
+                            <table mat-table [dataSource]="categoryList">
+
+                                <ng-container matColumnDef="select">
+                                    <th mat-header-cell *matHeaderCellDef>
+                                        <mat-checkbox (change)="$event ? masterToggle() : null"
+                                            [checked]="selectedItems.length === categoryList.data.length">
+                                        </mat-checkbox>
+                                    </th>
+                                    <td mat-cell *matCellDef="let row">
+                                        <mat-checkbox (click)="$event.stopPropagation()" (change)="toggleSelect(row)"
+                                            [checked]="selectedItems.indexOf(row) !== -1">
+                                        </mat-checkbox>
+                                    </td>
+                                </ng-container>
+
+
+                                <ng-container matColumnDef="nombre">
+                                    <th mat-header-cell *matHeaderCellDef class="input">Nombre</th>
+                                    <td mat-cell *matCellDef="let element" class="input">{{ element.nombre }}</td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="descripcion">
+                                    <th mat-header-cell *matHeaderCellDef class="input">Descripción</th>
+                                    <td mat-cell *matCellDef="let element" class="input">{{ element.descripcion }}</td>
+                                </ng-container>
+
+                                <!-- Enlaza las columnas a los datos -->
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            </table>
+                            <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+                            <mat-action-row>
+                                <button mat-button color="primary" (click)="prevStep()">Anterior</button>
+                                <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+                            </mat-action-row>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel class="expansion-panel" [expanded]="step === 2" (opened)="setStep(2)">
+                            <mat-expansion-panel-header class="expansion-panel-header">
+                                <mat-panel-title class="input">
+                                    Selección de imagenes
+                                </mat-panel-title>
+                                <mat-panel-description class="input">
+                                    Lugar para asociar imagenes al producto
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <mat-action-row>
+                                <button mat-button color="primary" (click)="prevStep()">Anterior</button>
+                                <button mat-button color="primary" (click)="nextStep()">Final</button>
+                              </mat-action-row>
+                        </mat-expansion-panel>
+                        <div class="row justify-content-end input">
+                            <div class="button">
+                                <button mat-raised-button color="primary" [disabled]="formulario.invalid">Crear
+                                    Producto</button>
+                            </div>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

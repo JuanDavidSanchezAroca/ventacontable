@@ -14,8 +14,23 @@ spring:
    datasource:
       driver-class-name: org.postgresql.Driver
       type: com.zaxxer.hikari.HikariDataSource
-      jdbcUrl: jdbc:postgresql://localhost:5432/ventacontable
-      username: postgres
-      password: ventacontable
+      jdbcUrl: jdbc:postgresql://venta-contable-store.ccxdkmpfwj8q.us-east-1.rds.amazonaws.com:5432/ventacontable
+      username: ventacontable
+      password: Ventacontable748*
       hikari:
          poolName: pool
+
+   mail:
+      host: smtp.gmail.com
+      port: 587
+      username: juan.david748@gmail.com
+      password: eiqesitvdkdpctzu
+      properties:
+         mail:
+            smtp:
+               auth: true
+               starttls:
+                  enable: true
+
+   main:
+      allow-bean-definition-overriding: true

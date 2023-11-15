@@ -1,9 +1,13 @@
 apply plugin: 'java'
 apply plugin: 'jacoco'
 
-group = 'com.ceiba'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '13'
+group = 'com.ventacontable'
+version = '1.0.0'
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_13
+	targetCompatibility = JavaVersion.VERSION_13
+}
 
 repositories {
 	mavenCentral()
@@ -21,14 +25,14 @@ dependencies {
 
 	implementation project.ext.lombok
 	annotationProcessor project.ext.lombok
+	implementation project.ext.springbootweb
+	implementation project.ext.springbootsecurity
+	implementation project.ext.webtokenapi
+	implementation project.ext.webtokenimpl
+	implementation project.ext.webtokenjackson
 }
 
-jacocoTestReport {
-	reports {
-		xml.enabled true
-		html.enabled true
-	}
-}
+
 
 test {
 	finalizedBy jacocoTestReport

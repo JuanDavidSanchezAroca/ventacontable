@@ -1,0 +1,44 @@
+<div class="custom-modal {{dataModal.cssClass}}">
+    <div class="modal-header">
+        <button mat-icon-button mat-dialog-close>
+            <mat-icon class="material-icons-round cerrar" (click)="close()">close</mat-icon>
+        </button>
+    </div>
+
+    <ng-container [ngSwitch]="dataModal.type">
+        <div class="info-modal" *ngSwitchCase="customModalType.ERROR">
+            <mat-icon class="icon-error">error_outline</mat-icon>
+            <ng-container *ngIf="dataModal.message; else mensajeGenerico">
+                <ng-container *ngIf="isList(dataModal.message); else mensajeSimple">
+                    <div class="lista">
+                        <p *ngFor="let fila of dataModal.message">{{fila}}</p>
+                    </div>
+                </ng-container>
+                <ng-template #mensajeSimple>
+                    <p>{{dataModal.message}}</p>
+                </ng-template>
+            </ng-container>
+            <ng-template #mensajeGenerico>
+                <p>Por alguna razón no se ha podido completar la operación. Inténtalo más tarde.</p>
+            </ng-template>
+        </div>
+
+        <div class="info-modal" *ngSwitchCase="customModalType.SUCCESS">
+            <div class="img-success"></div>
+            <ng-container *ngIf="dataModal.message; else mensajeGenerico">
+                <h1 class="title" mat-dialog-title>{{dataModal.title}}</h1>
+                <ng-container *ngIf="isList(dataModal.message); else mensajeSimple">
+                    <div class="lista">
+                        <p *ngFor="let fila of dataModal.message; let i = index" class="text{{i}}">{{fila}}</p>
+                    </div>
+                </ng-container>
+                <ng-template #mensajeSimple>
+                    <p>{{dataModal.message}}</p>
+                </ng-template>
+            </ng-container>
+            <ng-template #mensajeGenerico>
+                <p>{{modalMessage.SUCCESS}}</p>
+            </ng-template>
+        </div>
+    </ng-container>
+</div>

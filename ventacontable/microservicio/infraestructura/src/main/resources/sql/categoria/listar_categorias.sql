@@ -1,0 +1,1 @@
+SELECT id, nombre, descripcion FROM CATEGORIA ORDER BY id ASC

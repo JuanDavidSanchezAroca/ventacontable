@@ -5,8 +5,8 @@ allprojects {
 	}
 	
 	project.ext.swagger = [
-							"io.springfox:springfox-swagger-ui:2.9.2",
-							"io.springfox:springfox-swagger2:2.9.2"
+			"io.springfox:springfox-swagger-ui:2.10.5",
+			"io.springfox:springfox-swagger2:2.10.5"
 						  ]
 	project.ext.apachecommons = [
 									"commons-io:commons-io:2.6",
@@ -17,6 +17,8 @@ allprojects {
 	project.ext.springdevtools = ["org.springframework.boot:spring-boot-devtools:${springBootVersion}"]
 	
 	project.ext.springbootjdbc = ["org.springframework.boot:spring-boot-starter-jdbc:${springBootVersion}"]
+	project.ext.mail = ["org.springframework.boot:spring-boot-starter-mail:${springBootVersion}"]
+	project.ext.thymeleaf = ["org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}"]
 	
 	project.ext.springtxt = [
 							  	"org.springframework:spring-tx:${springVersion}",
@@ -28,7 +30,7 @@ allprojects {
 	project.ext.junit = ["junit:junit:4.12"]
 	project.ext.mockito = ['org.mockito:mockito-all:1.10.19']
 	project.ext.h2 = ["com.h2database:h2:1.4.194"]
-	project.ext.actuator=["org.springframework.boot:spring-boot-starter-actuator:2.1.6.RELEASE"]
+	project.ext.actuator=["org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"]
 	
 
 }

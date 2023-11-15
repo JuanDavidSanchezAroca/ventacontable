@@ -1,0 +1,1 @@
+INSERT INTO categoria_x_producto(id_producto,id_categoria) VALUES(:idProducto, :idCategoria)

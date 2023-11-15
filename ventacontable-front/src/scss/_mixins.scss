@@ -1,0 +1,57 @@
+@import "./variables";
+
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (max-width: 760px) {
+    @content;
+  }
+}
+
+@mixin for-phone-only {
+  @media (max-width: 700px) {
+    @content;
+  }
+}
+
+@mixin for-phone-only-min {
+  @media (min-width: 320px) and (max-width: 699px) {
+    @content;
+  }
+}
+
+@mixin for-small-phone {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

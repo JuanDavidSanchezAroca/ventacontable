@@ -1,0 +1,47 @@
+@import "../../../../../scss/variables";
+
+.container{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.error{
+  font-size: 12px;
+}
+
+.input {
+  margin-bottom: 12px;
+  font-family: $fontSecond-R;
+}
+
+.button-remember {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  font-weight: $fontPrimary;
+}
+
+
+.example-header-image {
+  background-image: url('../../../../../assets/img/login.png');
+  background-size: cover;
+  align-self: center;
+  height: 100px;
+  width: 100px;
+  border: 2px solid #333;
+}
+
+.title-login {
+  align-self: center;
+  margin: 20px 10px 20px 10px;
+  font-family: $fontPrimary-M;
+  font-weight: 500;
+  color: #333;
+  line-height: 20px;
+  font-size: 20px;
+}

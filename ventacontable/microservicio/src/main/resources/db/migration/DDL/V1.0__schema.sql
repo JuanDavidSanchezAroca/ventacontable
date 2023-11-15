@@ -49,7 +49,6 @@ CREATE TABLE PRODUCTO(
     precio_base FLOAT NOT NULL,
     talla VARCHAR(50) NOT NULL,
     color VARCHAR(100) NOT NULL,
-    genero VARCHAR(100) NOT NULL,
     cantidad_disponible INT
 );
 

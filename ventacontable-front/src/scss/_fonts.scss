@@ -1,0 +1,15 @@
+@mixin font-face($name, $src, $weight, $style) {
+  @font-face {
+    font-family: $name;
+    src: url(quote($src + '.eot')), url($src +'.woff') format('woff');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@include font-face("GeomanistWord-Bold", "/assets/fonts/GeomanistWord-Bold", normal, normal );
+@include font-face("GeomanistWord-Medium", "/assets/fonts/GeomanistWord-Medium", normal, normal );
+@include font-face("Bariol_Regular", "/assets/fonts/bariol_regular", normal, normal );
+@include font-face("Bariol_Regular_Italic", "/assets/fonts/bariol_regular_italic", normal, italic);
+@include font-face("Bariol_Bold", "/assets/fonts/bariol_bold", normal, normal);
+

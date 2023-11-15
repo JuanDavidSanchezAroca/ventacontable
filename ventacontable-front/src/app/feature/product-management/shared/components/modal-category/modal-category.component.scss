@@ -1,0 +1,21 @@
+@import "../../../../../../scss/variables";
+
+
+.titulo-crear-categoria {
+    margin: 15px 10px 0px 10px;
+    align-self: center;
+    text-align: center;
+    font-size: 20px;
+    font-family: $fontSecond-B;
+    color: #333;
+}
+
+.mat-form-field {
+    margin: 10px 10px 10px 10px;
+    width: 350px;
+}
+
+.input {
+    margin-bottom: 12px;
+    font-family: $fontSecond-R;
+}

@@ -1,0 +1,1 @@
+INSERT INTO ROL(nombre,descripcion) VALUES(:nombre,:descripcion)

@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="titulo-crear-categoria">
+        <mat-card-title>{{title}}</mat-card-title>
+      </div>
+      <div mat-dialog-content>
+        <form [formGroup]="categoryForm" #ngForm="ngForm" autocomplete="off" (ngSubmit)="onSubmit()">
+          <div class="row justify-content-center input">
+            <mat-form-field class="mat-form-field" appearance="outline">
+              <mat-label>Nombre</mat-label>
+              <input class="input-text" type="text" placeholder="Ingrese el nombre categoria" matInput id="name"
+                formControlName="nombre" />
+              <mat-error class="error" *ngIf="getControl('nombre')?.invalid && 
+                                        getControl('nombre')?.touched ||
+                                         ngForm.submitted">
+                * Debe ingresar el nombre
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="row justify-content-center input" *ngIf="!modalCategory.delete">
+            <mat-form-field class="mat-form-field" appearance="outline">
+              <mat-label>Descripción</mat-label>
+              <input class="input-text" type="text" placeholder="Ingrese la descripción categoria" matInput id="descripcion"
+                formControlName="descripcion" />
+              <mat-error class="error" *ngIf="getControl('descripcion')?.invalid && 
+                                        getControl('descripcion')?.touched ||
+                                         ngForm.submitted">
+                * Debe ingresar la descripción
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div mat-dialog-actions align="end">
+            <button mat-raised-button color="primary" (click)="onNoClick()">Cancelar</button>
+            <button mat-raised-button color="primary" [disabled]="categoryForm.invalid">{{titleButton}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

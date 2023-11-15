@@ -1,0 +1,60 @@
+<div class="menu-container">
+  <p class="titulo-principal"><strong>Panel de control</strong></p>
+  <div class="row justify-content-center card-container">
+    <div class="col-md-5  col-lg-3 col-sm-8">
+      <mat-card class="example-card">
+        <mat-card-header class="header">
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title class="titulo">Venta de productos</mat-card-title>
+          <mat-card-subtitle class="subtitulo">Descuentos especiales</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../../../../assets/img/clothing.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content class="contenido">
+          <p class="parrafo">
+            Aprovecha nuestras ofertas y obtén descuentos en una amplia selección de productos.
+          </p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-button>ENTRAR</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col-md-5  col-lg-3 col-sm-8">
+      <mat-card class="example-card">
+        <mat-card-header class="header">
+          <div mat-card-avatar class="contabilidad-image"></div>
+          <mat-card-title class="titulo principal">Módulo de contabilidad</mat-card-title>
+          <mat-card-subtitle class="subtitulo">Gestión financiera</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../../../../assets/img/bodega.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content class="contenido">
+          <p class="parrafo">
+            Realiza el seguimiento y control de tus finanzas de manera eficiente y precisa.
+          </p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-button (click)="createProduct()">ENTRAR</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col-md-5  col-lg-3 col-sm-8">
+      <mat-card class="example-card">
+        <mat-card-header class="header">
+          <div mat-card-avatar class="usuario-image"></div>
+          <mat-card-title class="titulo">Gestión de Usuarios</mat-card-title>
+          <mat-card-subtitle class="subtitulo">Administra los usuarios de tu aplicación</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../../../../assets/img/teamwork.jpg" alt="teamwork">
+        <mat-card-content class="contenido">
+          <p class="parrafo">
+            El módulo de gestión de usuarios proporciona las herramientas necesarias para administrar de manera
+            eficiente y segura a los usuarios de tu aplicación.
+          </p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-button (click)="createUser()">ENTRAR</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

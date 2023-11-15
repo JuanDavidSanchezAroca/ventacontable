@@ -1,14 +1,28 @@
 package com.ventacontable.usuario.puerto.dao;
 
-import com.ventacontable.usuario.modelo.dto.DtoUsuario;
-
-import java.util.List;
+import com.ventacontable.usuario.modelo.entidad.Usuario;
 
 public interface DaoUsuario {
 
     /**
-     * Permite listar usuarios
-     * @return los usuarios
+     * Busca usuario por el nombre de usuario
+     *
+     * @param usuario
+     * @return
      */
-    List<DtoUsuario> listar();
+    boolean buscarUsuario(String usuario);
+
+    /**
+     * Metodo que nos retorna si el id del usuario existe
+     *
+     * @param id identificador del usuario
+     * @return true si existe, false, caso contrario
+     */
+    boolean buscarId(Integer id);
+
+    boolean validarUsuarioPassword(Usuario usuario);
+
+    Usuario buscarUsuarioByEmail(String email);
 }
+
+
